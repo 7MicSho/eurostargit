@@ -1,0 +1,88 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree&family=Montserrat:wght@200;500&display=swap');
+
+.titlebanner-cliente{
+    display: flex;
+    align-items: center;
+	min-height: 200px;
+    padding: 50px;
+	background-image:linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)), url("../../../../../html/image/title-banner.webp");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    
+}
+
+.titlebanner-visit{
+    display: flex;
+    align-items: center;
+	min-height: 250px;
+    padding: 50px;
+	background-image:linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)), url("../../../../../html/image/title-banner-visit.webp");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    
+}
+
+.txt-title{
+    margin-left: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    color: white;
+}
+
+.titlebanner-prospect{
+    display: flex;
+    align-items: center;
+	min-height: 200px;
+    padding: 50px;
+	background-image:linear-gradient(0deg, rgba(224,255,0,0.5) 0%, rgba(247,86,241,0.5) 100%), url("../../../../../html/image/title-banner-pr.webp");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    
+}
+
+.titlebanner-productos{
+    display: flex;
+    align-items: center;
+	min-height: 200px;
+    padding: 50px;
+	background-image:linear-gradient(0deg, rgba(0, 67, 154, 0.963), rgb(3, 0, 30));
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    
+}
+
+.titlebanner-seller0{
+    display: flex;
+    align-items: center;
+	min-height: 200px;
+    padding: 50px;
+	background-image:linear-gradient(0deg,  rgba(224,255,0,0.5) 0%, rgba(247,86,241,0.5) 100%), url("../../../../../html/image/title-banner-user.png");
+    background-repeat: repeat;
+    background-size: 90% auto;
+    backface-visibility: initial;
+    
+}
+.titlebanner-seller{
+    display: flex;
+    align-items: center;
+	min-height: 200px;
+    padding: 50px;
+	background-image:linear-gradient(0deg,  rgba(224,255,0,0.5) 0%, rgba(247,86,241,0.5) 100%), url("../../../../../html/image/title-banner-user.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    
+}
+
+.paginate_button{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
