@@ -10,8 +10,18 @@
 		}
 		public function dashboard($vendedores)
 		{
-			$this->_contenido = 'html/pages/empleado/inicio.php';
-			require_once ESTRUCTURA.'estructura.php';			
+			if ($_SESSION['typeuser'] == 'admin') {
+		
+				$this->_contenido = 'html/pages/empleado/inicio.php';
+				require_once ESTRUCTURA.'estructura.php';			
+			
+			
+			
+			}else{
+			
+				header( 'Location: ?modulo=producto&accion=galeria' ) ;
+			
+			}	
 		}
 		public function dashboarddown($vendedores)
 		{

@@ -86,3 +86,10 @@
     margin: 4px 2px;
     cursor: pointer;
 }
+
+@media (max-width: 550px) {
+    .fotocart{
+        visibility: hidden;
+        width: 0;
+    }
+}

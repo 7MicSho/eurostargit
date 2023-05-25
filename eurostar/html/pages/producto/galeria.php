@@ -59,90 +59,105 @@
                 <div class="tab-pane fade show active" id="navs-vinilicas-premium">
                     <h4 id="within-cards" class="anchor-heading mb-4 fw-bold">Vinílicas Premium</h4>
                     <p>
+                        
                         Las Pinturas Vinil-Acrilicas VIGO 200, ROMA 400, VENECIA 600, MADRID 800 y PARIS 1000, son
-                        acabados arquitect6nicos elaborados a base de resinas vinil acrflicas, emulsionadas en agua,
+                        acabados arquitectónicos elaborados a base de resinas vinil acrilicas, emulsionadas en agua,
                         para interiores y exteriores, de excelente resistencia al lavado y maxima duración.
                     </p>
                     <div class="divider divider-primary">
                         <div class="divider-text"><i class="bx bx-palette" style="color: black;"></i></div>
                     </div>
                     <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
-                        <div class="col">
-                            <div class="card h-100">
-                                <img class="card-img-top" src="<?php echo ASSETS ?>/img/elements/p-verde.jpg"
-                                    alt="Card image cap" />
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-10">
-                                            <h5 class="card-title">Vigo</h5>
-                                        </div>
-                                        <div class="col-2">
-                                            <i class="bx bx-brush" style="color: #089B3B ;"></i>
-                                        </div>
-                                    </div>
-                                    <p class="card-text">
-                                        This is a longer card with supporting text below as a natural lead-in to
-                                        additional content.
-                                        This content is a little bit longer.
-                                    </p>
-                                </div>
-                                <div class="text-center" style="padding:5%">
-                                    <a type="button" style="border-radius:20px" href="?modulo=producto&accion=vigo200"
-                                        class="btn btn-outline-dark"><i class="bx bx-palette"></i> Ver más...</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card h-100">
-                                <img class="card-img-top" src="<?php echo ASSETS ?>/img/elements/p-rosa.jpg"
-                                    alt="Card image cap" />
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-10">
-                                            <h5 class="card-title">Roma</h5>
-                                        </div>
-                                        <div class="col-2">
-                                            <i class="bx bx-brush" style="color: #77FF58 ;"></i>
+
+
+
+                    <?php for ($i = 0; $i < count($vinilicas); $i++) {
+                        switch ($vinilicas[$i]['nombre']) {
+                            case 'VIGO':
+                                ?>
+                                    <div class="col">
+                                        <div class="card h-100">
+                                            <img class="card-img-top" src="<?php echo ASSETS ?>/img/elements/p-verde.jpg"
+                                                alt="Card image cap" />
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-10">
+                                                        <h5 class="card-title"><?php echo $vinilicas[$i]['nombre'] ?></h5>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <i class="bx bx-brush" style="color: #089B3B ;"></i>
+                                                    </div>
+                                                </div>
+                                                <p class="card-text">
+                                                <?php echo $vinilicas[$i]['detalles'] ?>
+                                                </p>
+                                            </div>
+                                            <div class="text-center" style="padding:5%">
+                                                <a type="button" style="border-radius:20px" href="?modulo=producto&accion=vinilicas"
+                                                    class="btn btn-outline-dark"><i class="bx bx-palette"></i> Ver más...</a>
+                                            </div>
                                         </div>
                                     </div>
-                                    <p class="card-text">
-                                        This is a longer card with supporting text below as a natural lead-in to
-                                        additional content.
-                                        This content is a little bit longer.
-                                    </p>
-                                </div>
-                                <div class="text-center" style="padding:5%">
-                                    <a type="button" style="border-radius:20px" href="?modulo=producto&accion=vigo200"
-                                        class="btn btn-outline-info"><i class="bx bx-palette"></i> Ver más...</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
+                                            <?php
+                                            break;
+                            case 'ROMA':
+                                ?>
+                                    <div class="col">
+                                        <div class="card h-100">
+                                            <img class="card-img-top" src="<?php echo ASSETS ?>/img/elements/p-rosa.jpg"
+                                                alt="Card image cap" />
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-10">
+                                                    <h5 class="card-title"><?php echo $vinilicas[$i]['nombre'] ?></h5>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <i class="bx bx-brush" style="color: #77FF58 ;"></i>
+                                                    </div>
+                                                </div>
+                                                <p class="card-text">
+                                                <?php echo $vinilicas[$i]['detalles'] ?>
+                                                </p>
+                                            </div>
+                                            <div class="text-center" style="padding:5%">
+                                                <a type="button" style="border-radius:20px" href="?modulo=producto&accion=vinilicas"
+                                                    class="btn btn-outline-info"><i class="bx bx-palette"></i> Ver más...</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                            <?php
+                                            break;
+                            case 'VENECIA':
+                                ?>
+<div class="col">
                             <div class="card h-100">
                                 <img class="card-img-top" src="<?php echo ASSETS ?>/img/elements/p-amarilla.jpg"
                                     alt="Card image cap" />
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-10">
-                                            <h5 class="card-title">Venecia</h5>
+                                        <h5 class="card-title"><?php echo $vinilicas[$i]['nombre'] ?></h5>
                                         </div>
                                         <div class="col-2">
                                             <i class="bx bx-brush" style="color: #FFF236 ;"></i>
                                         </div>
                                     </div>
                                     <p class="card-text">
-                                        This is a longer card with supporting text below as a natural lead-in to
-                                        additional content.
-                                        This content is a little bit longer.
+                                    <?php echo $vinilicas[$i]['detalles'] ?>
                                     </p>
                                 </div>
                                 <div class="text-center" style="padding:5%">
                                     <a type="button" style="border-radius:20px"
-                                        href="?modulo=producto&accion=venecia600" class="btn btn-outline-warning"><i
+                                        href="?modulo=producto&accion=vinilicas" class="btn btn-outline-warning"><i
                                             class="bx bx-palette"></i> Ver más...</a>
                                 </div>
                             </div>
                         </div>
+                                            <?php
+                                            break;
+                            case 'MADRID':
+                                ?>
+
                         <div class="col">
                             <div class="card h-100">
                                 <img class="card-img-top" src="<?php echo ASSETS ?>/img/elements/p-blanca.jpg"
@@ -150,24 +165,27 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-10">
-                                            <h5 class="card-title">Madrid</h5>
+                                        <h5 class="card-title"><?php echo $vinilicas[$i]['nombre'] ?></h5>
                                         </div>
                                         <div class="col-2">
                                             <i class="bx bx-brush" style="color: #ED6D03  ;"></i>
                                         </div>
                                     </div>
                                     <p class="card-text">
-                                        This is a longer card with supporting text below as a natural lead-in to
-                                        additional content.
-                                        This content is a little bit longer.
+                                    <?php echo $vinilicas[$i]['detalles'] ?>
                                     </p>
                                 </div>
                                 <div class="text-center" style="padding:5%">
-                                    <a type="button" style="border-radius:20px" href="?modulo=producto&accion=vigo200"
+                                    <a type="button" style="border-radius:20px" href="?modulo=producto&accion=vinilicas"
                                         class="btn btn-outline-danger"><i class="bx bx-palette"></i> Ver más...</a>
                                 </div>
                             </div>
                         </div>
+                                            <?php
+                                            break;
+                            case 'PARIS SATINADA':
+                                ?>
+
                         <div class="col">
                             <div class="card h-100">
                                 <img class="card-img-top" src="<?php echo ASSETS ?>/img/elements/p-verde.jpg"
@@ -175,24 +193,28 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-10">
-                                            <h5 class="card-title">París satinada</h5>
+                                        <h5 class="card-title"><?php echo $vinilicas[$i]['nombre'] ?></h5>
                                         </div>
                                         <div class="col-2">
                                             <i class="bx bx-brush" style="color: #ED6D03 ;"></i>
                                         </div>
                                     </div>
                                     <p class="card-text">
-                                        This is a longer card with supporting text below as a natural lead-in to
-                                        additional content.
-                                        This content is a little bit longer.
+                                    <?php echo $vinilicas[$i]['detalles'] ?>
                                     </p>
                                 </div>
                                 <div class="text-center" style="padding:5%">
-                                    <a type="button" style="border-radius:20px" href="?modulo=producto&accion=vigo200"
+                                    <a type="button" style="border-radius:20px" href="?modulo=producto&accion=vinilicas"
                                         class="btn btn-outline-success"><i class="bx bx-palette"></i> Ver más...</a>
                                 </div>
                             </div>
                         </div>
+                                            <?php
+                                            break;
+                            case 'PARIS MATE':
+                                ?>
+
+
                         <div class="col">
                             <div class="card h-100">
                                 <img class="card-img-top" src="<?php echo ASSETS ?>/img/elements/p-rosa.jpg"
@@ -200,24 +222,37 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-10">
-                                            <h5 class="card-title">París mate</h5>
+                                        <h5 class="card-title"><?php echo $vinilicas[$i]['nombre'] ?></h5>
                                         </div>
                                         <div class="col-2">
                                             <i class="bx bx-brush" style="color: #ED6D03 ;"></i>
                                         </div>
                                     </div>
                                     <p class="card-text">
-                                        This is a longer card with supporting text below as a natural lead-in to
-                                        additional content.
-                                        This content is a little bit longer.
+                                    <?php echo $vinilicas[$i]['detalles'] ?>
                                     </p>
                                 </div>
                                 <div class="text-center" style="padding:5%">
-                                    <a type="button" style="border-radius:20px" href="?modulo=producto&accion=vigo200"
+                                    <a type="button" style="border-radius:20px" href="?modulo=producto&accion=vinilicas"
                                         class="btn btn-outline-success"><i class="bx bx-palette"></i> Ver más...</a>
                                 </div>
                             </div>
                         </div>
+                                            <?php
+                                            break;
+
+                            default:
+                                # code...
+                                break;
+                        }
+                        ?>
+                    <?php } ?>
+
+
+
+
+
+
                     </div>
                 </div>
                 <!-- / Vinilicas premium -->

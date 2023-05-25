@@ -1,3 +1,13 @@
+<?php if(isset($_GET['ok'])){  ?>
+<script>
+    Swal.fire({
+                icon: 'success',
+                title: 'AGREGADO',
+                text: 'El empleado se han guardado correctamente',
+                footer: ''
+            })
+</script>
+<?php } ?>
 <div class="col-12 text-center titlebanner-seller">
     <h1 class="display-3 txt-title" style="margin: 0;"> Administrar Empleados</h1>
 </div>
@@ -6,7 +16,7 @@
 
         <div class="container-xxl flex-grow-1 container-p-y">
             <div class="row">
-                <div class="col-lg-4 col-md-12 order-0">
+                <div class="col-lg-4 col-md-12" style="width: 32%; margin-right:10px" >
                     <a href="?modulo=empleado&accion=agregar">
                         <div class="d-flex align-items-center row">
                             <div class="col-sm-12 bg-success text-center"
@@ -19,11 +29,21 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-lg-4 col-md-12 order-1">
-                    <br>
+                <div class="col-lg-4 col-md-12 " style="width: 32%;  margin-right:10px" >
+                <a href="?modulo=empleado&accion=agregar">
+                        <div class="d-flex align-items-center row">
+                            <div class="col-sm-12 bg-info text-center"
+                                style="color: white; border-radius: 10px 10px 10px 10px;">
+                                <i class="fa-solid fa-user-plus fa-2x mt-4"></i>
+                                <p class="mt-1 pb-1">
+                                    Bonos Empleado
+                                </p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
 
-                <div class="col-lg-4 col-md-12 order-3">
+                <div class="col-lg-4 col-md-12" style="width: 32%;">
                     <a href="?modulo=empleado&accion=empleados_downs">
                         <div class="d-flex align-items-center row">
                             <div class="col-sm-12 bg-danger text-center"

@@ -3,112 +3,132 @@
         <div class="col-12 order-1">
             <div class="row">
 
-                <div class="col-lg-3 col-md-6 col-12 mb-6">
+                <div class="col-lg-4 col-md-6 col-12 mb-6">
                     <div class="card">
                         <div class="card-body">
                             <div class="card-title d-flex align-items-start justify-content-between">
                                 <div class="avatar flex-shrink-0">
-                                    <span class="avatar-initial rounded bg-label-warning"><i class="bx bx-user-plus"></i></span>
+                                    <span class="avatar-initial rounded bg-label-warning"><i
+                                            class="bx bx-user-plus"></i></span>
                                 </div>
                                 <div class="dropdown">
-                                    <button class="btn p-0" type="button" id="cardOpt3" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button class="btn p-0" type="button" id="cardOpt3" data-bs-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
                                         <i class="bx bx-dots-vertical-rounded"></i>
                                     </button>
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
-                                        <a class="dropdown-item" href="?modulo=prospectos&accion=administrar">Ver todos</a>
-                                        <a class="dropdown-item" href="?modulo=prospectos&accion=agregar">Agregar Nuevo</a>
+                                        <a class="dropdown-item" href="?modulo=prospectos&accion=administrar">Ver
+                                            todos</a>
+                                        <a class="dropdown-item" href="?modulo=prospectos&accion=agregar">Agregar
+                                            Nuevo</a>
                                     </div>
                                 </div>
                             </div>
                             <span class="fw-semibold d-block mb-4">PROSPECTOS</span>
                             <h3 class="card-title mb-2">23</h3>
-                            <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +12 <span class="badge bg-label-success rounded-pill">ultimo 30 dias</span></small>
+                            <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +12 <span
+                                    class="badge bg-label-success rounded-pill">ultimo 30 dias</span></small>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-12 mb-6">
+                <div class="col-lg-4 col-md-6 col-12 mb-6">
                     <div class="card">
                         <div class="card-body">
                             <div class="card-title d-flex align-items-start justify-content-between">
                                 <div class="avatar flex-shrink-0">
-                                    <span class="avatar-initial rounded bg-label-primary"><i class="bx bx-happy-alt"></i></span>
+                                    <span class="avatar-initial rounded bg-label-primary"><i
+                                            class="bx bx-happy-alt"></i></span>
                                 </div>
                                 <div class="dropdown">
-                                    <button class="btn p-0" type="button" id="cardOpt3" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button class="btn p-0" type="button" id="cardOpt3" data-bs-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
                                         <i class="bx bx-dots-vertical-rounded"></i>
                                     </button>
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
-                                        <a class="dropdown-item" href="?modulo=clientes&accion=administrar">Ver todos</a>
-                                        <a class="dropdown-item" href="?modulo=clientes&accion=agregar">Agregar Nuevo</a>
+                                        <a class="dropdown-item" href="?modulo=clientes&accion=administrar">Ver
+                                            todos</a>
+                                        <a class="dropdown-item" href="?modulo=clientes&accion=agregar">Agregar
+                                            Nuevo</a>
                                     </div>
                                 </div>
                             </div>
                             <span class="fw-semibold d-block mb-4">CLIENTES</span>
                             <h3 class="card-title mb-2">53</h3>
-                            <small class="text-success text-nowrap fw-semibold"><i class="bx bx-chevron-up"></i> +12 <span class="badge bg-label-success rounded-pill">ultimo 30 dias</span></small>
+                            <small class="text-success text-nowrap fw-semibold"><i class="bx bx-chevron-up"></i> +12
+                                <span class="badge bg-label-success rounded-pill">ultimo 30 dias</span></small>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-12 mb-6">
+                <div class="col-lg-4 col-md-6 col-12 mb-6">
                     <div class="card">
                         <div class="card-body">
                             <div class="card-title d-flex align-items-start justify-content-between">
                                 <div class="avatar flex-shrink-0">
-                                    <span class="avatar-initial rounded bg-label-success"><i class="bx bx-box"></i></span>
+                                    <span class="avatar-initial rounded bg-label-success"><i
+                                            class="bx bx-box"></i></span>
                                 </div>
                                 <div class="dropdown">
-                                    <button class="btn p-0" type="button" id="cardOpt3" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button class="btn p-0" type="button" id="cardOpt3" data-bs-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
                                         <i class="bx bx-dots-vertical-rounded"></i>
                                     </button>
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
                                         <a class="dropdown-item" href="?modulo=producto&accion=galeria">Ver todos</a>
-                                        <a class="dropdown-item" href="?modulo=prospectos&accion=agregar">Agregar Nuevo</a>
+                                        <a class="dropdown-item" href="?modulo=prospectos&accion=agregar">Agregar
+                                            Nuevo</a>
                                     </div>
                                 </div>
                             </div>
                             <span class="fw-semibold d-block mb-4">PRODUCTOS</span>
                             <h3 class="card-title mb-2">16</h3>
-                            <small class="text-danger fw-semibold"><i class="bx bx-up-arrow-alt"></i>+0 <span class="badge bg-label-danger rounded-pill">ultimo 30 dias</span> </small>
+                            <small class="text-danger fw-semibold"><i class="bx bx-up-arrow-alt"></i>+0 <span
+                                    class="badge bg-label-danger rounded-pill">ultimo 30 dias</span> </small>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-lg-3 col-md-6 col-12 mb-6">
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12 mb-6">
                     <div class="card">
                         <div class="card-body">
                             <div class="card-title d-flex align-items-start justify-content-between">
                                 <div class="avatar flex-shrink-0">
-                                    <span class="avatar-initial rounded bg-label-primary"><i class="bx bx-user-plus"></i></span>
+                                    <span class="avatar-initial rounded bg-label-primary"><i
+                                            class="bx bx-user-plus"></i></span>
                                 </div>
                                 <div class="dropdown">
-                                    <button class="btn p-0" type="button" id="cardOpt3" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button class="btn p-0" type="button" id="cardOpt3" data-bs-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
                                         <i class="bx bx-dots-vertical-rounded"></i>
                                     </button>
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
                                         <a class="dropdown-item" href="?modulo=empleado&accion=home">Ver todos</a>
-                                        <a class="dropdown-item" href="?modulo=empleado&accion=agregar">Agregar Nuevo</a>
+                                        <a class="dropdown-item" href="?modulo=empleado&accion=agregar">Agregar
+                                            Nuevo</a>
                                     </div>
                                 </div>
                             </div>
                             <span class="fw-semibold d-block mb-4">EMPLEADOS</span>
                             <h3 class="card-title mb-2">6</h3>
-                            <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +12 <span class="badge bg-label-success rounded-pill">ultimo 30 dias</span></small>
+                            <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +12 <span
+                                    class="badge bg-label-success rounded-pill">ultimo 30 dias</span></small>
                         </div>
                     </div>
                 </div>
-                </div>
-                <br>
-                <div class="row">
 
-                <div class="col-lg-3 col-md-6 col-12 mb-6">
+
+                <div class="col-lg-4 col-md-6 col-12 mb-6">
                     <div class="card">
                         <div class="card-body">
                             <div class="card-title d-flex align-items-start justify-content-between">
                                 <div class="avatar flex-shrink-0">
-                                    <span class="avatar-initial rounded bg-label-danger"><i class="bx bx-cuboid"></i></span>
+                                    <span class="avatar-initial rounded bg-label-danger"><i
+                                            class="bx bx-cuboid"></i></span>
                                 </div>
                                 <div class="dropdown">
-                                    <button class="btn p-0" type="button" id="cardOpt6" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button class="btn p-0" type="button" id="cardOpt6" data-bs-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
                                         <i class="bx bx-dots-vertical-rounded"></i>
                                     </button>
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
@@ -119,31 +139,57 @@
                             </div>
                             <span class="fw-semibold d-block mb-4">PROVEEDORES</span>
                             <h3 class="card-title text-nowrap mb-1">44</h3>
-                            <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +12 <span class="badge bg-label-success rounded-pill">ultimo 30 dias</span></small>
+                            <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +12 <span
+                                    class="badge bg-label-success rounded-pill">ultimo 30 dias</span></small>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-12 mb-3">
+                <div class="col-lg-4 col-md-6 col-12 mb-3">
                     <div class="card">
                         <div class="card-body">
                             <div class="card-title d-flex align-items-start justify-content-between">
                                 <div class="avatar flex-shrink-0">
-                                    <span class="avatar-initial rounded bg-label-success"><i class="bx bx-box"></i></span>
+                                    <span class="avatar-initial rounded bg-label-success"><i
+                                            class="bx bx-box"></i></span>
                                 </div>
                                 <div class="dropdown">
-                                    <button class="btn p-0" type="button" id="cardOpt3" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button class="btn p-0" type="button" id="cardOpt3" data-bs-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
                                         <i class="bx bx-dots-vertical-rounded"></i>
                                     </button>
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
                                         <a class="dropdown-item" href="javascript:void(0);">Ver todos</a>
-                                        <a class="dropdown-item" href="?modulo=prospectos&accion=agregar">Agregar Nuevo</a>
+                                        <a class="dropdown-item" href="?modulo=prospectos&accion=agregar">Agregar
+                                            Nuevo</a>
                                     </div>
                                 </div>
                             </div>
                             <span class="fw-semibold d-block mb-4">VENTAS</span>
                             <h3 class="card-title mb-2">16</h3>
-                            <small class="text-danger fw-semibold"><i class="bx bx-up-arrow-alt"></i>+0 <span class="badge bg-label-danger rounded-pill">ultimo 30 dias</span> </small>
+                            <small class="text-danger fw-semibold"><i class="bx bx-up-arrow-alt"></i>+0 <span
+                                    class="badge bg-label-danger rounded-pill">ultimo 30 dias</span> </small>
                         </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-12 mb-3">
+                    <div class="card">
+                        <a href="?modulo=admin&accion=viewpowerbi">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">
+                                    <div class="d-flex flex-sm-column align-items-start justify-content-between">
+                                        <div class="card-title">
+                                            <h5 class="text-nowrap">POWER BI</h5>
+                                            <span class="badge bg-label-warning rounded-pill">FEBRERO 2023</span>
+                                        </div>
+                                        <div class="mt-0">
+                                            <img src="" alt="">
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <div class="col-lg-6 mb-4">
@@ -157,22 +203,25 @@
                                     </div>
                                     <div class="mt-0">
                                         <h4 class="mb-3">$14,686.00<small> MXN</small> </h4>
-                                        <small class="text-success text-nowrap fw-semibold"><i class="bx bx-chevron-up"></i> 68.2%  <span class="badge bg-label-success rounded-pill">ultimo 30 dias</span></small>
+                                        <small class="text-success text-nowrap fw-semibold"><i
+                                                class="bx bx-chevron-up"></i> 68.2% <span
+                                                class="badge bg-label-success rounded-pill">ultimo 30
+                                                dias</span></small>
                                     </div>
                                 </div>
                                 <div id="profileReportChart"></div>
-                                
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            
 
 
-                
-            
+
+
+
+
         </div>
         <div class="row">
             <div class="col-md-6 col-lg-6 col-xl-6 order-0 mb-4">
@@ -180,7 +229,8 @@
                     <div class="card-header d-flex align-items-center justify-content-between">
                         <h5 class="card-title m-0 me-2">PRODUCTOS MÁS VENDIDOS</h5>
                         <div class="dropdown">
-                            <button class="btn p-0" type="button" id="transactionID" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn p-0" type="button" id="transactionID" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
                                 <i class="bx bx-dots-vertical-rounded"></i>
                             </button>
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
@@ -201,7 +251,8 @@
                         <ul class="p-0 m-0">
                             <li class="d-flex mb-4 pb-1">
                                 <div class="avatar flex-shrink-0 me-3">
-                                    <span class="avatar-initial rounded bg-label-primary"><i class="bx bx-brush"></i></span>
+                                    <span class="avatar-initial rounded bg-label-primary"><i
+                                            class="bx bx-brush"></i></span>
                                 </div>
                                 <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                                     <div class="me-2">
@@ -215,7 +266,8 @@
                             </li>
                             <li class="d-flex mb-4 pb-1">
                                 <div class="avatar flex-shrink-0 me-3">
-                                    <span class="avatar-initial rounded bg-label-success"><i class="bx bx-building"></i></span>
+                                    <span class="avatar-initial rounded bg-label-success"><i
+                                            class="bx bx-building"></i></span>
                                 </div>
                                 <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                                     <div class="me-2">
@@ -243,7 +295,8 @@
                             </li>
                             <li class="d-flex">
                                 <div class="avatar flex-shrink-0 me-3">
-                                    <span class="avatar-initial rounded bg-label-secondary"><i class="bx bx-dots-horizontal-rounded"></i></span>
+                                    <span class="avatar-initial rounded bg-label-secondary"><i
+                                            class="bx bx-dots-horizontal-rounded"></i></span>
                                 </div>
                                 <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                                     <div class="me-2">
@@ -271,7 +324,8 @@
                     <div class="card-header d-flex align-items-center justify-content-between">
                         <h5 class="card-title m-0 me-2">MEJORES VENDEDORES</h5>
                         <div class="dropdown">
-                            <button class="btn p-0" type="button" id="transactionID" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn p-0" type="button" id="transactionID" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
                                 <i class="bx bx-dots-vertical-rounded"></i>
                             </button>
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
@@ -285,7 +339,8 @@
                         <ul class="p-0 m-0">
                             <li class="d-flex mb-4 pb-1">
                                 <div class="avatar flex-shrink-0 me-3">
-                                    <img src="<?php echo ASSETS ?>/img/avatars/1.png" alt="Oneplus" class="w-px-40 h-auto rounded-circle">
+                                    <img src="<?php echo ASSETS ?>/img/avatars/1.png" alt="Oneplus"
+                                        class="w-px-40 h-auto rounded-circle">
                                 </div>
                                 <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                                     <div class="me-2">
@@ -300,7 +355,8 @@
                             </li>
                             <li class="d-flex mb-4 pb-1">
                                 <div class="avatar flex-shrink-0 me-3">
-                                    <img src="<?php echo ASSETS ?>/img/avatars/5.png" alt="Oneplus" class="w-px-40 h-auto rounded-circle">
+                                    <img src="<?php echo ASSETS ?>/img/avatars/5.png" alt="Oneplus"
+                                        class="w-px-40 h-auto rounded-circle">
                                 </div>
                                 <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                                     <div class="me-2">
@@ -315,7 +371,8 @@
                             </li>
                             <li class="d-flex mb-4 pb-1">
                                 <div class="avatar flex-shrink-0 me-3">
-                                    <img src="<?php echo ASSETS ?>/img/avatars/vendedor.jpg" alt="Oneplus" class="w-px-40 h-auto rounded-circle">
+                                    <img src="<?php echo ASSETS ?>/img/avatars/vendedor.jpg" alt="Oneplus"
+                                        class="w-px-40 h-auto rounded-circle">
                                 </div>
                                 <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                                     <div class="me-2">
@@ -330,7 +387,8 @@
                             </li>
                             <li class="d-flex mb-4 pb-1">
                                 <div class="avatar flex-shrink-0 me-3">
-                                    <img src="<?php echo ASSETS ?>/img/avatars/6.png" alt="Oneplus" class="w-px-40 h-auto rounded-circle">
+                                    <img src="<?php echo ASSETS ?>/img/avatars/6.png" alt="Oneplus"
+                                        class="w-px-40 h-auto rounded-circle">
                                 </div>
                                 <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                                     <div class="me-2">
@@ -345,7 +403,8 @@
                             </li>
                             <li class="d-flex mb-4 pb-1">
                                 <div class="avatar flex-shrink-0 me-3">
-                                    <img src="<?php echo ASSETS ?>/img/avatars/7.png" alt="Oneplus" class="w-px-40 h-auto rounded-circle">
+                                    <img src="<?php echo ASSETS ?>/img/avatars/7.png" alt="Oneplus"
+                                        class="w-px-40 h-auto rounded-circle">
                                 </div>
                                 <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                                     <div class="me-2">
@@ -360,7 +419,8 @@
                             </li>
                             <li class="d-flex">
                                 <div class="avatar flex-shrink-0 me-3">
-                                    <img src="<?php echo ASSETS ?>/img/avatars/1.png" alt="Oneplus" class="w-px-40 h-auto rounded-circle">
+                                    <img src="<?php echo ASSETS ?>/img/avatars/1.png" alt="Oneplus"
+                                        class="w-px-40 h-auto rounded-circle">
                                 </div>
                                 <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                                     <div class="me-2">

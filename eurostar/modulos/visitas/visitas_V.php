@@ -29,5 +29,11 @@ class Visitas_V{
 			$this->_contenido = 'html/pages/visitas/listapersonas.php';
 			require_once ESTRUCTURA.'estructura.php';		
 		}
+
+		public function carrito($prospecto,$productos)
+		{
+			$this->_contenido = 'html/pages/visitas/carrito.php';
+			require_once ESTRUCTURA.'estructura.php';		
+		}
 }
 ?>

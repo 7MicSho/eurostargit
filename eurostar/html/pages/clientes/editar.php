@@ -72,9 +72,8 @@
                                     '<?php echo $clientes[$i]['municipio'] ?>',
                                     '<?php echo $clientes[$i]['estado'] ?>',
                                     '<?php echo $clientes[$i]['pais'] ?>',
-                                    
                                     '<?php echo $clientes[$i]['correo'] ?>',
-                                    '<?php echo $clientes[$i]['puesto'] ?>',
+                                    '<?php isset($clientes[$i]['puesto'])? $txt=$clientes[$i]['puesto']: $txt='cliente'; echo $txt;?>',
                                     '<?php echo $clientes[$i]['codigo_pais'] ?>',
                                     '<?php echo $clientes[$i]['lada'] ?>',
                                     '<?php echo $clientes[$i]['numero_telefono'] ?>'

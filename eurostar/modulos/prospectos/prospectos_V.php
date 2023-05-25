@@ -29,6 +29,12 @@
 			require_once ESTRUCTURA.'estructura.php';		
 		}
 
+		public function seleccionar($prospectos, $prosSinEmp)
+		{
+			$this->_contenido = 'html/pages/prospectos/seleccionar.php';
+			require_once ESTRUCTURA.'estructura.php';		
+		}
+
         public function editar($prospectos, $vendedores)
 		{
 			$this->_contenido = 'html/pages/prospectos/editar.php';

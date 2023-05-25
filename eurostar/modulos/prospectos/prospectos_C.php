@@ -47,6 +47,11 @@
 		public function promociones(){
 			$this->_objVista->promociones(); 
 		}
+		public function seleccionar(){
+			$prospectos=$this->_objModelo->readProspectosM();
+			$prosSinEmp=$this->_objModelo->readProspectosNoEmpresaM();
+			$this->_objVista->seleccionar($prospectos->fetchAll(PDO::FETCH_ASSOC), $prosSinEmp->fetchAll(PDO::FETCH_ASSOC)); 
+		}
 
 		public function readprospectos(){
 			$prospectos=$this->_objModelo->readProspectosM();
@@ -68,7 +73,7 @@
 			if ($res) {
 				header('Location:?modulo=prospectos&accion=agregar&sc');
 			} else {
-				header('Location:?modulo=prospectos&accion=agregar&fail'.$res.'<- lo agrega antes de aqui');
+				header('Location:?modulo=prospectos&accion=agregar&fail');
 			}
 		}
 

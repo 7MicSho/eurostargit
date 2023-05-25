@@ -15,13 +15,18 @@
 		}
 		
 		public function galeria(){
-
-			$this->_objVista->galeria(); 
+			$vinilicasPDO = $this->_objModelo->readProductosVinilicas();
+			$vinilicas = $vinilicasPDO->fetchAll(PDO::FETCH_ASSOC);
+			$this->_objVista->galeria($vinilicas); 
 		}
 
 		public function vigo200(){
 
 			$this->_objVista->vigo200(); 
+		}
+		public function vinilicas(){
+
+			$this->_objVista->vinilicas(); 
 		}
 
 		public function roma400(){

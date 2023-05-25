@@ -1,0 +1,7 @@
+ErrorDocument 404 http://192.168.21.63/eurostar/
+Options -Indexes
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^post/(.*)$ post.php?id=$1&slug?=$2 [L,NC,QSA]
+RewriteRule ^([^\.]+)$ $1.php [NC,L]

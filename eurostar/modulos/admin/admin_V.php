@@ -33,6 +33,12 @@
 			$this->_contenido = 'html/pages/admin/inicio.php';
 			require_once ESTRUCTURA.'estructura.php';		
 		}
+		public function viewpowerbi()
+		{
+			//$this->_validate();
+			$this->_contenido = 'html/pages/admin/powerbiview.php';
+			require_once ESTRUCTURA.'estructura.php';		
+		}
 
 
 

@@ -283,23 +283,24 @@
                                                 class="fa-solid fa-upload"></i></span>
                                     </div>
                                 </div>
-                                 <!-- Agregado 18-4 -->
+                                <!-- Agregado 18-4 -->
                                 <div class="col-sm-4">
-                                <label class="form-label" for="basic-icon-default-fullname">Vendedor Asignado <strong
-                                        class="text-primary">*</strong></label>
-                                <div class="input-group input-group-merge">
-                                    <span id="basic-icon-default-fullname2" class="input-group-text"><i
-                                            class="bx bx-phone-call text-primary"></i></span>
-                                    <select class="form-control" id="vendedor" placeholder="Vendedor" name="vendedor"
-                                        aria-label="Vendedor" aria-describedby="basic-icon-default-fullname2" require>
-                                        <option value="">...</option>
-                                        <?php for ($i = 0; $i < count($empleados); $i++) {
-                                            echo '<option  value="' . $empleados[$i]['id_empleado'] . '">' . $empleados[$i]['nombre'] .' '. $empleados[$i]['primer_apellido'] . '</option>';
-                                        } ?>
-                                    </select>
+                                    <label class="form-label" for="basic-icon-default-fullname">Vendedor Asignado
+                                        <strong class="text-primary">*</strong></label>
+                                    <div class="input-group input-group-merge">
+                                        <span id="basic-icon-default-fullname2" class="input-group-text"><i
+                                                class="bx bx-phone-call text-primary"></i></span>
+                                        <select class="form-control" id="vendedor" placeholder="Vendedor"
+                                            name="vendedor" aria-label="Vendedor"
+                                            aria-describedby="basic-icon-default-fullname2" require>
+                                            <option value="">...</option>
+                                            <?php for ($i = 0; $i < count($empleados); $i++) {
+                                                echo '<option  value="' . $empleados[$i]['id_empleado'] . '">' . $empleados[$i]['nombre'] . ' ' . $empleados[$i]['primer_apellido'] . '</option>';
+                                            } ?>
+                                        </select>
+                                    </div>
+                                    <!-- Agregado 18-4 -->
                                 </div>
-                                 <!-- Agregado 18-4 -->
-                            </div>
                             </div>
                         </div>
                         <div class="col-12 d-flex justify-content-center">
@@ -702,8 +703,8 @@
                                 <label for="exampleFormControlSelect1" class="form-label">Cubetas por mes<strong
                                         class="text-primary">*</strong></label>
                                 <div class="input-group">
-                                    <input type="number" class="form-control" id="promcompra"
-                                        aria-describedby="compras" aria-label="compras">
+                                    <input type="number" class="form-control" id="promcompra" aria-describedby="compras"
+                                        aria-label="compras">
                                     <span id="basic-icon-emailcomp" class="input-group-text"><i
                                             class="fa-solid fa-upload"></i></span>
                                 </div>
@@ -722,19 +723,29 @@
                             <div class="col-sm-4">
                                 <label class="form-label" for="basic-icon-default-fullname">Vendedor Asignado <strong
                                         class="text-primary">*</strong></label>
-                                <div class="input-group input-group-merge">
-                                    <span id="basic-icon-default-fullname2" class="input-group-text"><i
-                                            class="bx bx-phone-call text-primary"></i></span>
-                                    <select class="form-control" id="vendedorm" placeholder="vendedor" name="vendedor"
-                                        aria-label="vendedor" aria-describedby="basic-icon-default-fullname2" require>
-                                        <option value="">...</option>
-                                        <?php for ($i = 0; $i < count($empleados); $i++) {
-                                            echo '<option  value="' . $empleados[$i]['id_empleado'] . '">' . $empleados[$i]['nombre'] .' '. $empleados[$i]['primer_apellido'] . '</option>';
-                                        } ?>
-                                    </select>
+                                <?php if (isset($_SESSION['typeuser']) && $_SESSION['typeuser'] == 'empleado') { ?>
+                                    <input type="hidden" class="form-control" id="vendedorm" placeholder="vendedor"
+                                        name="vendedor" aria-label="compras" value="<?php echo $_SESSION['id_empleado']; ?>">
+                                    <div class="input-group input-group-merge">
+
+                                        <span id="basic-icon-default-fullname2" class="input-group-text"><i
+                                                class="bx bx-phone-call text-primary"></i></span>
+
+                                        <input type="text" class="form-control" id="vendedortext"
+                                            placeholder="vendedortexto" name="vendedortexto" aria-label="compras"
+                                            value="<?php echo $_SESSION['nombre']; ?>" readonly>
+                                    <?php } elseif (isset($_SESSION['typeuser']) && $_SESSION['typeuser'] == 'admin') { ?>
+                                        <select class="form-control" id="vendedorm" placeholder="vendedor" name="vendedor"
+                                            aria-label="vendedor" aria-describedby="basic-icon-default-fullname2" require>
+                                            <option value="">...</option>
+                                            <?php for ($i = 0; $i < count($empleados); $i++) {
+                                                echo '<option  value="' . $empleados[$i]['id_empleado'] . '">' . $empleados[$i]['nombre'] . ' ' . $empleados[$i]['primer_apellido'] . '</option>';
+                                            } ?>
+                                        </select>
+                                    <?php } ?>
                                 </div>
                             </div>
-                             <!-- Agregado 18-4 -->
+                            <!-- Agregado 18-4 -->
                         </div>
 
                         <div class="col-12 d-flex justify-content-center">
@@ -794,8 +805,8 @@
                 while (div.firstChild) {
                     div.removeChild(div.firstChild);
                 }
-                div.innerHTML=
-                `
+                div.innerHTML =
+                    `
                 <label class="form-label" for="basic-icon-nombre-compañia">Tipo<strong
                         class="text-primary">*</strong></label>
                 <div class="input-group input-group-merge">
@@ -913,7 +924,7 @@
                 footer: ''
             })
 
-            
+
         } else {
             let url = '?modulo=prospectos&accion=createpmoral';
             const formData = new FormData();
@@ -960,8 +971,9 @@
                     text: 'Prospecto agregado con exito',
                     footer: ''
                 })
-                
-                
+                setTimeout(pausa, 900);
+
+
 
             } else {
                 Swal.fire({
@@ -970,7 +982,7 @@
                     text: 'Error al registrar prospecto, intenta más tarde',
                     footer: ''
                 })
-                setTimeout(pausa,900);
+                setTimeout(pausa, 900);
             }
         }
 

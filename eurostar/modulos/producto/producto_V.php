@@ -11,7 +11,7 @@
 		}
 
 
-		public function galeria()
+		public function galeria($vinilicas)
 		{
 			$this->_contenido = 'html/pages/producto/galeria.php';
 			require_once ESTRUCTURA.'estructura.php';		
@@ -20,6 +20,12 @@
 		public function vigo200()
 		{
 			$this->_contenido = 'html/pages/producto/vinilicas/vigo200.php';
+			require_once ESTRUCTURA.'estructura.php';		
+		}
+
+		public function vinilicas()
+		{
+			$this->_contenido = 'html/pages/producto/vinilicas/vinilicas.php';
 			require_once ESTRUCTURA.'estructura.php';		
 		}
 		public function roma400()

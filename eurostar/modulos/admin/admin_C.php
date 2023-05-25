@@ -30,6 +30,10 @@
 			
 			$this->_objVista->home(); 
 		}
+		public function viewpowerbi(){
+			
+			$this->_objVista->viewpowerbi(); 
+		}
 		
 		
 		

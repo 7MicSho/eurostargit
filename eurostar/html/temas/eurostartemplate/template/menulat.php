@@ -50,7 +50,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="text-secondary" href="?modulo=usuario&accion=salir">
+                            <a class="text-secondary" href="?modulo=usuario&accion=config">
                                 <i class="bx bx-cog me-2"></i>
                             </a>
                         </li>
@@ -80,9 +80,14 @@
                 <div data-i18n="User interface">USUARIOS</div>
             </a>
             <ul class="menu-sub">
-                <li class="menu-item">
+                <!-- <li class="menu-item">
                     <a href="?modulo=empleado&accion=home" class="menu-link">
                         <div data-i18n="Accordion">EMPLEADOS</div>
+                    </a>
+                </li> -->
+                <li class="menu-item">
+                    <a href="?modulo=empleado&accion=home" class="menu-link">
+                        <div data-i18n="Buttons">EMPLEADOS</div>
                     </a>
                 </li>
                 <li class="menu-item">
@@ -90,11 +95,11 @@
                         <div data-i18n="Buttons">CLIENTES</div>
                     </a>
                 </li>
-                <li class="menu-item">
+                <!-- <li class="menu-item">
                     <a href="?modulo=proveedor&accion=home" class="menu-link">
                         <div data-i18n="Buttons">PROVEEDORES</div>
                     </a>
-                </li>
+                </li> -->
                 <li class="menu-item">
                     <a href="?modulo=prospectos&accion=administrar" class="menu-link">
                         <div data-i18n="Buttons">PROSPECTOS</div>
@@ -110,17 +115,17 @@
             <ul class="menu-sub">
                 <li class="menu-item">
                     <a href="?modulo=visitas&accion=consultar" class="menu-link">
-                        <div data-i18n="Alerts">Administrar</div>
+                        <div data-i18n="Alerts">ADMINISTRAR</div>
                     </a>
                 </li>
                 <li class="menu-item">
                     <a href="?modulo=visitas&accion=muestras" class="menu-link">
-                        <div data-i18n="Alerts">Muestras</div>
+                        <div data-i18n="Alerts">MUESTRAS</div>
                     </a>
                 </li>
                 <li class="menu-item">
                     <a href="?modulo=prospectos&accion=promociones" class="menu-link">
-                        <div data-i18n="Buttons">Promociones</div>
+                        <div data-i18n="Buttons">PROMOCIONES</div>
                     </a>
                 </li>
             </ul>
@@ -167,12 +172,12 @@
                 <div data-i18n="Boxicons">FORMULACIÓN</div>
             </a>
         </li>
-        <li class="menu-item">
+        <!-- <li class="menu-item">
             <a href="icons-boxicons.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-crown"></i>
                 <div data-i18n="Boxicons">Solicitudes especiales</div>
             </a>
-        </li>
+        </li> -->
 
 
 
@@ -401,12 +406,18 @@
                 </li>
             </ul>
         </li>
-        <li class="menu-item">
+        <!-- <li class="menu-item">
             <a href="icons-boxicons.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-crown"></i>
                 <div data-i18n="Boxicons">SOLICITUDES ESPECIALES</div>
             </a>
         </li>
+        <li class="menu-item">
+            <a href="icons-boxicons.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-crown"></i>
+                <div data-i18n="Boxicons">SOLICITUDES ESPECIALES</div>
+            </a>
+        </li> -->
         <?php } elseif ($_SESSION['typeuser'] == 'prospectos') { ?>
         <li class="menu-header small text-uppercase">
             <span class="menu-header-text">PROSPECTO</span>
@@ -464,4 +475,5 @@
         <?php } ?>
     </ul>
 </aside>
+
 <!-- / Menu -->

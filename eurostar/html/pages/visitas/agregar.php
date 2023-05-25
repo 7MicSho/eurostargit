@@ -193,8 +193,7 @@
                                         <label class="text-muted">
                                             Especifique desarrollo
                                         </label>
-                                        <textarea class="form-control" type="text" rows="5" name="producto" id="txtarea" readonly>
-                                            </textarea>
+                                        <textarea class="form-control" type="text" rows="5" name="producto" id="txtarea" readonly></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -236,8 +235,7 @@
                                             Especificaciones de muestra
                                         </label>
                                         <textarea class="form-control" type="text" rows="5" name="especificacion"
-                                            id="especificacion" style="resize: none;">
-                                            </textarea>
+                                            id="especificacion" style="resize: none;"></textarea>
                                     </div>
                                 </div>
                             </div>

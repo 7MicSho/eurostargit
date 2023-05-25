@@ -322,6 +322,15 @@ class Prospectos_M
 			return null;
 		}
 	}
+	public function readOneProductos($datos)
+	{
+		$qryresult = RunQuery($datos);
+		if ($qryresult) {
+			return $qryresult;
+		} else {
+			return null;
+		}
+	}
 	public function readOneProspectoVendedorM($datos)
 	{
 		$idper = $datos['id_persona'];
