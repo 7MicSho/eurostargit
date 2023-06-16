@@ -129,23 +129,30 @@
                                 <div class="avatar flex-shrink-0 me-3 d-flex align-items-center justify-content-center">
                                     <i class="fa-solid fa-circle-user fa-2x"></i>
                                 </div>
-                                <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                    <div class="me-2">
+                                <div class="row w-100">
+                                    <div class="col-4">
                                         <small class="text-muted d-block mb-1"><?php echo $clientes[$i]['nombre'].' '.$clientes[$i]['primer_apellido'] ?></small>
-                                        <h6 class="mb-0"><?php if($clientes[$i]['nombre_emp']==''){
-                                            echo 'Sin empresa';
+                                        <?php
+                                        if($clientes[$i]['fk_id_empresa']!=''){
+                                            for ($j=0; $j < count($empresas) ; $j++) { 
+                                                if ($clientes[$i]['fk_id_empresa']==$empresas[$j]['id_empresa']) {
+                                                    echo '<h6 class="mb-0">'.$empresas[$j]['nombre_emp'].'</h6>';
+                                                    $j=count($empresas);
+                                                }
+                                            }
                                         }else{
-                                            echo $clientes[$i]['nombre_emp'];
-                                        } ?></h6>
+                                            echo '<h6 class="mb-0">S/E</h6>';
+                                        }
+                                        ?>
                                     </div>
-                                    <div class="me-2">
+                                    <div class="col-5">
                                         <small class="text-muted d-block mb-1"><?php echo 'Productos comprados'?></small>
                                     
                                         <h6 class="mb-0">Vinílica, Sellador</h6>
                                     
                                     </div>
                                     
-                                    <div class="user-progress d-flex align-items-center gap-1">
+                                    <div class="col-3">
                                         <h6 class="mb-0">10-02-2023</h6>
                                     </div>
 
@@ -163,7 +170,20 @@
 <!-- / Content -->
 <script>
     const ctx = document.getElementById('myChart');
-    var labels=['cliente1','cliente2','cliente3'];
+    <?php
+    $c='';
+        for ($i=0; $i < count($clientes) ; $i++) {
+            echo $i;
+            if($i==count($iclientes)-1){
+                $c=$c.$clientes[$i]['nombre'].' '.$clientes[$i]['primer_apellido'].' '.$clientes[$i]['segundo_apellido'];
+            }else{
+                $c=$c.$clientes[$i]['nombre'].' '.$clientes[$i]['primer_apellido'].' '.$clientes[$i]['segundo_apellido'].',';
+            }
+        }
+    $c=trim($c);
+    $array=explode(',',$c);
+    ?>
+    var labels=['<?php echo $array[0] ?>','<?php echo $array[1] ?>','<?php echo $array[2] ?>'];
     var data=[2, 2,2];
 
     new Chart(ctx, {

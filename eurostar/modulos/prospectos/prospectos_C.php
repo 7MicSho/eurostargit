@@ -18,18 +18,20 @@
 		}
 
 		public function administrar(){
-			$visitas=$this->_objModeloVisit->readAllVisit();
+			$visitas=$this->_objModeloVisit->readVisitSinEmp();
 			$chartInfo=$this->_objModelo->readProspectosByBuy();
 			$chartInfoMonth=$this->_objModelo->readProspectosByMonth();
 			$prospectosOnly=$this->_objModelo->readProspectosOnly();
-			$this->_objVista->home($visitas->fetchAll(PDO::FETCH_ASSOC), $chartInfo->fetchAll(PDO::FETCH_ASSOC), $prospectosOnly->fetchAll(PDO::FETCH_ASSOC), $chartInfoMonth->fetchAll(PDO::FETCH_ASSOC)); 
+			$empresas=$this->_objModeloVisit->readEmpresas();
+			$this->_objVista->home($visitas->fetchAll(PDO::FETCH_ASSOC), $chartInfo->fetchAll(PDO::FETCH_ASSOC), $prospectosOnly->fetchAll(PDO::FETCH_ASSOC) , $chartInfoMonth->fetchAll(PDO::FETCH_ASSOC), $empresas->fetchAll(PDO::FETCH_ASSOC)); 
 		}
 
 
         public function agregar(){
 			$empleados=$this->_objModelo->readEmpleados();
+			$mercados=$this->_objModelo->readMercados();
 			$prefijos=json_decode(file_get_contents("html/temas/eurostartemplate/assets/json/prefijos.json"), true);
-			$this->_objVista->agregar($prefijos, $empleados->fetchAll(PDO::FETCH_ASSOC)); 
+			$this->_objVista->agregar($prefijos, $empleados->fetchAll(PDO::FETCH_ASSOC), $mercados->fetchAll(PDO::FETCH_ASSOC)); 
 		}
 
         public function consultar(){
@@ -40,8 +42,11 @@
 
         public function editar(){
 			$prospectos=$this->_objModelo->readProspectosM();
+			$prosSinEmp=$this->_objModelo->readProspectosNoEmpresaM();
 			$vendedores=$this->_objModelo->readVendedores();
-			$this->_objVista->editar($prospectos->fetchAll(PDO::FETCH_ASSOC), $vendedores->fetchAll(PDO::FETCH_ASSOC)); 
+			$mercados=$this->_objModelo->readMercados();
+			$tipos=$this->_objModelo->readTipos();
+			$this->_objVista->editar($prospectos->fetchAll(PDO::FETCH_ASSOC), $vendedores->fetchAll(PDO::FETCH_ASSOC), $prosSinEmp->fetchAll(PDO::FETCH_ASSOC), $mercados->fetchAll(PDO::FETCH_ASSOC), $tipos->fetchAll(PDO::FETCH_ASSOC)); 
 		}
 
 		public function promociones(){
@@ -55,8 +60,18 @@
 
 		public function readprospectos(){
 			$prospectos=$this->_objModelo->readProspectosM();
-			
-			$this->_objVista->editar($prospectos->fetchAll(PDO::FETCH_ASSOC));
+			$vendedores=$this->_objModelo->readEmpleados();
+			$prosSinEmp=$this->_objModelo->readProspectosNoEmpresaM();
+			$mercados=$this->_objModelo->readMercados();
+			$tipos=$this->_objModelo->readTipos();
+
+			$this->_objVista->editar($prospectos->fetchAll(PDO::FETCH_ASSOC), $vendedores->fetchAll(PDO::FETCH_ASSOC),$prosSinEmp->fetchAll(PDO::FETCH_ASSOC),$mercados->fetchAll(PDO::FETCH_ASSOC), $tipos->fetchAll(PDO::FETCH_ASSOC));
+		}
+
+		public function prospecto(){
+			$prospecto=$this->_objModelo->readOneProspectoM($this->_datos);
+			$visitas=$this->_objModeloVisit->readVisitToPros($this->_datos);
+			$this->_objVista->prospecto($prospecto->fetchAll(PDO::FETCH_ASSOC), $visitas->fetchAll(PDO::FETCH_ASSOC));
 		}
 
 		public function createpfisica(){
@@ -86,11 +101,25 @@
 			}
 		}
 
-		public function prospecto(){
-			$prospecto=$this->_objModelo->readOneProspectoM($this->_datos);
-			$visitas=$this->_objModeloVisit->readVisitToPros($this->_datos);
-			$this->_objVista->prospecto($prospecto->fetchAll(PDO::FETCH_ASSOC), $visitas->fetchAll(PDO::FETCH_ASSOC));
+		public function getmercados(){
+			$res=$this->_objModelo->getMercadosM($this->_datos);
+			if($res){
+				echo json_encode($res->fetchAll(PDO::FETCH_ASSOC));
+			}else{
+				echo 'error';
+			}
 		}
+
+		public function deleteprospectobd(){
+			$res=$this ->_objModelo->deletebd($this->_datos);
+			if ($res) {
+				header('Location:?modulo=prospectos&accion=editar&sc');
+			} else {
+				header('Location:?modulo=prospectos&accion=editar&fail');
+			}
+		}
+
+		
 
 
 

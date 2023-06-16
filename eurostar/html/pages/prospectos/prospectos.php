@@ -47,149 +47,171 @@
             </div>
         </div>
 
-        <?php if($_SESSION["typeuser"] == 'admin')
-        { ?>
+        <?php if ($_SESSION["typeuser"] == 'admin') { ?>
 
-        <div class="row mt-4">
-            <!-- Order Statistics -->
-            <div class="col-lg-6 order-0 mb-4">
-                <div class="card h-100">
-                    <div class="card-header d-flex align-items-center justify-content-between pb-0"
-                        style="margin-bottom: 20px;">
-                        <div class="row">
-                            <div class="col-6">
-                                <div class="card-title mb-0 align-items-center justify-content-center">
-                                    <h5 class="m-0 me-2">Prospectos registrados por mes</h5>
-                                </div>
-
-                            </div>
-                            <div class="col-6">
-                                <div class="d-flex justify-content-center align-items-center mb-3">
-                                    <div class="d-flex flex-column align-items-center gap-1">
-                                        <h2 class="mb-0">
-                                            <?php
-                                            echo count($prospectosOnly);
-                                            ?>
-                                        </h2>
-                                        <span><small class="text-muted"> Total de prospectos </small></span>
+            <div class="row mt-4">
+                <!-- Order Statistics -->
+                <div class="col-lg-6 order-0 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header d-flex align-items-center justify-content-between pb-0"
+                            style="margin-bottom: 20px;">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="card-title mb-0 align-items-center justify-content-center">
+                                        <h5 class="m-0 me-2">Prospectos registrados por mes</h5>
                                     </div>
+
                                 </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="col-lg-12 col-md-10 d-flex justify-content-center">
-                                    <canvas class="p-3" id="myChart"></canvas>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-                    <div class="card-body">
-                        <div class="text-center">
-                            <h6><small class="text-muted"> Promedio de compra estimado</small></h6>
-                        </div>
-
-                        <ul class="p-0 m-0">
-                            <?php 
-                            for ($i = 0; $i < 3; $i++) { ?>
-                                <li class="d-flex mb-4 pb-1">
-                                    <div class="avatar flex-shrink-0 me-3">
-                                        <span class="avatar-initial rounded bg-label-primary"><i
-                                                class="bx bx-mobile-alt"></i></span>
-                                    </div>
-                                    <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                        <div class="user-progress">
-                                            <small class="">
-                                                <?php echo $chartInfo[$i]['nombre'];?>
-                                            </small>
-                                            <small class="fw-semibold">
+                                <div class="col-6">
+                                    <div class="d-flex justify-content-center align-items-center mb-3">
+                                        <div class="d-flex flex-column align-items-center gap-1">
+                                            <h2 class="mb-0">
                                                 <?php
-                                                
-                                                echo $chartInfo[$i]['nombre_emp'];
-                                            
+                                                echo count($prospectosOnly);
                                                 ?>
-                                            </small>
+                                            </h2>
+                                            <span><small class="text-muted"> Total de prospectos </small></span>
                                         </div>
-                                        <div class="me-2">
-                                            <small class="text-muted">
-                                                <?php
-                                                echo $chartInfo[$i]['promedio_compra_mes'].' cubetas/mes'
-                                                ?>
-                                            </small>
-                                        </div>
-
                                     </div>
-                                </li>
-                            <?php } ?>
+                                </div>
+                                <div class="col-12">
+                                    <div class="col-lg-12 col-md-10 d-flex justify-content-center">
+                                        <canvas class="p-3" id="myChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
 
-                        </ul>
+
+                        </div>
+                        <div class="card-body">
+                            <div class="text-center">
+                                <h6><small class="text-muted"> Promedio de compra estimado</small></h6>
+                            </div>
+
+                            <ul class="p-0 m-0">
+                                <?php
+                                for ($i = 0; $i < 3; $i++) { ?>
+                                    <li class="d-flex mb-4 pb-1">
+                                        <div class="avatar flex-shrink-0 me-3">
+                                            <span class="avatar-initial rounded bg-label-primary"><i
+                                                    class="bx bx-mobile-alt"></i></span>
+                                        </div>
+                                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                            <div class="user-progress">
+                                                <small class="">
+                                                    <?php echo $prospectosOnly[$i]['nombre'].' '.$prospectosOnly[$i]['primer_apellido']; ?>
+                                                </small>
+                                                <small class="fw-semibold">
+                                                <?php if ($prospectosOnly[$i]['fk_id_empresa']!=NULL) {
+                                                    for ($j = 0; $j < count($empresas); $j++) {
+                                                        if ($prospectosOnly[$i]['fk_id_empresa'] == $empresas[$j]['id_empresa']) {
+                                                            echo '<strong class="text-muted d-block mb-1">' . $empresas[$j]['nombre_emp'] . '</strong>';
+                                                            $j = count($empresas);
+                                                        }
+                                                    }
+                                                } else {
+                                                    echo '<strong class="text-muted d-block mb-1">Sin empresa</strong>';
+                                                } ?>
+                                                </small>
+                                            </div>
+                                            <div class="me-2">
+                                                <small class="text-muted">
+                                                    <?php
+                                                    echo $chartInfo[$i]['promedio_compra_mes'] . ' cubetas/mes'
+                                                        ?>
+                                                </small>
+                                            </div>
+
+                                        </div>
+                                    </li>
+                                <?php } ?>
+
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!--/ Order Statistics -->
+                <!--/ Order Statistics -->
 
-            <!-- Expense Overview -->
+                <!-- Expense Overview -->
 
-            <!--/ Expense Overview -->
+                <!--/ Expense Overview -->
 
-            <!-- Transactions -->
-            <div class="col-lg-6 order-2 mb-4">
-                <div class="card h-100">
-                    <div class="card-header d-flex align-items-center justify-content-between">
-                        <h5 class="card-title m-0 me-2">Visitas más recientes</h5>
-                    </div>
-                    <div class="card-body">
-                        <ul class="p-0 m-0">
-                            <?php
-                            if (count($visitas) < 11) {
-                                $cont = count($visitas);
-                            } else {
-                                $cont = 11;
-                            }
-                            for ($i = 0; $i < $cont; $i++) { ?>
-                                <li class="d-flex mb-4 pb-1">
-                                    <div class="avatar flex-shrink-0 me-3 d-flex align-items-center justify-content-center">
-                                        <i class="fa-solid fa-circle-user fa-2x"></i>
-                                    </div>
-                                    <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                        <div class="me-2">
-                                            <?php if ($visitas[$i]['nombre_emp'] != 'N/A') {
-                                                echo '<strong class="text-muted d-block mb-1">' . $visitas[$i]['nombre_emp'] . '</strong>';
-                                            } else {
-                                                echo '<strong class="d-block mb-1">' . $visitas[$i]['nombre'] . ' ' . $visitas[$i]['primer_apellido'] . '</strong>';
-                                            } ?>
-                                            <h6 class="mb-0">
-                                                <?php if ($visitas[$i]['nombre_emp'] != 'N/A') { echo $visitas[$i]['puesto'];}else{ echo '';} ?>
-                                            </h6>
+                <!-- Transactions -->
+                <div class="col-lg-6 order-2 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header d-flex align-items-center justify-content-between">
+                            <h5 class="card-title m-0 me-2">Visitas más recientes</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="p-0 m-0">
+                                <?php
+                                if (count($visitas) < 11) {
+                                    $cont = count($visitas);
+                                } else {
+                                    $cont = 11;
+                                }
+                                for ($i = 0; $i < $cont; $i++) { ?>
+                                    <li class="d-flex mb-4 pb-1">
+                                        <div class="avatar flex-shrink-0 me-3 d-flex align-items-center justify-content-center">
+                                            <i class="fa-solid fa-circle-user fa-2x"></i>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div
-                                                    class="user-progress d-flex align-items-center justify-content-end gap-1">
-                                                    <small class="mb-0" style="text-transform: uppercase;">
-                                                        <?php if ($visitas[$i]['nombre_emp'] != 'N/A') { echo $visitas[$i]['nombre_emp'];} ?>
-                                                    </small>
+                                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                            <div class="me-2">
+                                                <?php if (isset($visitas[$i]['nombre_emp'])) {
+                                                    for ($j = 0; $j < count($empresas); $j++) {
+                                                        if ($visitas[$i]['fk_id_empresa'] == $empresas[$j]['id_empresa']) {
+                                                            echo '<strong class="text-muted d-block mb-1">' . $visitas[$i]['nombre_emp'] . '</strong>';
+                                                            $j = count($empresas);
+                                                        }
+                                                    }
+                                                } else {
+                                                    echo '<strong class="d-block mb-1">' . $visitas[$i]['nombre'] . ' ' . $visitas[$i]['primer_apellido'] . '</strong>';
+                                                } ?>
+                                                <h6 class="mb-0">
+                                                    <?php if ($visitas[$i]['puesto'] != '') {
+                                                        echo $visitas[$i]['puesto'];
+                                                    } else {
+                                                        echo '';
+                                                    } ?>
+                                                </h6>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div
+                                                        class="user-progress d-flex align-items-center justify-content-end gap-1">
+                                                        <small class="mb-0" style="text-transform: uppercase;">
+                                                            <?php if ($visitas[$i]['fk_id_empresa']!='') {
+                                                                for ($j = 0; $j < count($empresas); $j++) {
+                                                                    if ($visitas[$i]['fk_id_empresa'] == $empresas[$j]['id_empresa']) {
+                                                                        echo '<strong class="text-muted d-block mb-1">' . $empresas[$j]['nombre_emp'] . '</strong>';
+                                                                        $j = count($empresas);
+                                                                    }
+                                                                }
+                                                            } else {
+                                                                echo '<strong class="text-muted d-block mb-1">S/E</strong>';
+                                                            } ?>
+                                                        </small>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div
+                                                        class="user-progress d-flex align-items-center justify-content-end gap-1">
+                                                        <h6 class="mb-0">
+                                                            <?php echo $visitas[$i]['fecha_visita'] . ' - ' . $visitas[$i]['hora_visita'] ?>
+                                                        </h6>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="col-12">
-                                                <div
-                                                    class="user-progress d-flex align-items-center justify-content-end gap-1">
-                                                    <h6 class="mb-0">
-                                                        <?php echo $visitas[$i]['fecha_visita'] . ' - ' . $visitas[$i]['hora_visita'] ?>
-                                                    </h6>
-                                                </div>
-                                            </div>
-                                        </div>
 
-                                    </div>
-                                </li>
-                            <?php } ?>
-                        </ul>
+                                        </div>
+                                    </li>
+                                <?php } ?>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+                <!--/ Transactions -->
             </div>
-            <!--/ Transactions -->
-        </div>
 
         <?php } ?>
     </div>

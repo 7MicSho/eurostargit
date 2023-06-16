@@ -1,5 +1,232 @@
 <div class="content-wrapper">
     <div class="container-xxl flex-grow-1 container-p-y">
+
+    <div class="row">
+            <div class="col-md-6 col-lg-6 col-xl-6 order-0 mb-4">
+                <div class="card h-100">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                        <h5 class="card-title m-0 me-2">GIROS MÁS VENDIDOS</h5>
+                        <small class="text-success fw-semibold">
+                            <span class="badge bg-label-success rounded-pill "> <i class="bx bx-up-arrow-alt"></i>  ultimos 30 dias</span>
+                        </small>
+                         <!-- 
+                        <div class="dropdown">
+                            <button class="btn p-0" type="button" id="transactionID" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
+                                <a class="dropdown-item" href="javascript:void(0);">Últimos 28 Días</a>
+                                <a class="dropdown-item" href="javascript:void(0);">Último Mes</a>
+                                <a class="dropdown-item" href="javascript:void(0);">Último Año</a>
+
+                            
+                            </div>
+                        </div>-->
+                    </div>
+                    <div class="card-body">
+                        <ul class="p-0 m-0">
+                        <?php for ($i=0; $i < count($mercado) ; $i++) {  ?>
+                            <li class="d-flex mb-4 pb-1">
+                                <div class="avatar flex-shrink-0 me-3">
+                                    <span class="avatar-initial rounded bg-label-info"><i
+                                            class="bx bx-world"></i></span>
+                                </div>
+                                <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                    <div class="me-2">
+                                        <h6 class="mb-0"><?php echo $mercado[$i]['nombre_giro'] ?></h6>
+                                        <small class="text-muted"> MERCADO: <?php echo $mercado[$i]['nombre_mercado'] ?> </small>
+                                    </div>
+                                    <div class="user-progress">
+                                        <small class="fw-semibold"><?php echo $mercado[$i]['suma'] ?> <strong> </strong></small>
+                                    </div>
+                                </div>
+                            </li>
+                        <?php } ?>
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-6 order-0 mb-4">
+                <div class="card h-100">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                        <h5 class="card-title m-0 me-2">GIROS MÁS PROSPECTADOS</h5>
+                        <small class="text-success fw-semibold">
+                            <span class="badge bg-label-success rounded-pill "> <i class="bx bx-up-arrow-alt"></i>  ultimos 30 dias</span>
+                        </small>
+                         <!-- 
+                        <div class="dropdown">
+                            <button class="btn p-0" type="button" id="transactionID" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
+                                <a class="dropdown-item" href="javascript:void(0);">Últimos 28 Días</a>
+                                <a class="dropdown-item" href="javascript:void(0);">Último Mes</a>
+                                <a class="dropdown-item" href="javascript:void(0);">Último Año</a>
+
+                            
+                            </div>
+                        </div>-->
+                    </div>
+                    <div class="card-body">
+                        <ul class="p-0 m-0">
+                        <?php for ($i=0; $i < count($mercadop) ; $i++) {  ?>
+                            <li class="d-flex mb-4 pb-1">
+                                <div class="avatar flex-shrink-0 me-3">
+                                    <span class="avatar-initial rounded bg-label-info"><i
+                                            class="bx bx-world"></i></span>
+                                </div>
+                                <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                    <div class="me-2">
+                                        <h6 class="mb-0"><?php echo $mercadop[$i]['nombre_giro'] ?></h6>
+                                        <small class="text-muted"> MERCADO: <?php echo $mercadop[$i]['nombre_mercado'] ?> </small>
+                                    </div>
+                                    <div class="user-progress">
+                                        <small class="fw-semibold"><?php echo $mercadop[$i]['suma'] ?> <strong> </strong></small>
+                                    </div>
+                                </div>
+                            </li>
+                        <?php } ?>
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-6 order-0 mb-4">
+                <div class="card h-100">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                        <h5 class="card-title m-0 me-2">PRODUCTOS MÁS VENDIDOS</h5>
+                        <small class="text-success fw-semibold">
+                            <span class="badge bg-label-success rounded-pill "> <i class="bx bx-up-arrow-alt"></i>  ultimos 30 dias</span>
+                        </small>
+                         <!-- 
+                        <div class="dropdown">
+                            <button class="btn p-0" type="button" id="transactionID" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
+                                <a class="dropdown-item" href="javascript:void(0);">Últimos 28 Días</a>
+                                <a class="dropdown-item" href="javascript:void(0);">Último Mes</a>
+                                <a class="dropdown-item" href="javascript:void(0);">Último Año</a>
+
+                            
+                            </div>
+                        </div>-->
+                    </div>
+                    <div class="card-body">
+                        <ul class="p-0 m-0">
+
+                        <?php for ($i=0; $i < count($ventas) ; $i++) {  ?>
+                            <li class="d-flex mb-4 pb-1">
+                                <div class="avatar flex-shrink-0 me-3">
+                                    <span class="avatar-initial rounded bg-label-primary"><i
+                                            class="bx bx-brush"></i></span>
+                                </div>
+                                <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                    <div class="me-2">
+                                        <h6 class="mb-0"><?php echo $ventas[$i]['descripcion_tipo_pro'] ?></h6>
+                                        <small class="text-muted"><?php echo $ventas[$i]['cantidad_vendida'] ?> UNIDAD(ES) VENDIDAS </small>
+                                    </div>
+                                    <div class="user-progress">
+                                        <small class="fw-semibold">$<?php echo $ventas[$i]['total_neto_vendido'] ?> <strong> MXN</strong></small>
+                                    </div>
+                                </div>
+                            </li>
+                        <?php } ?>
+
+                        
+                        <?php ?>
+
+
+
+                        
+
+                        </ul>
+                        <hr>
+                        <div >
+                            
+                            <div class="d-flex flex-column align-items-center gap-1 mt-10">
+                                
+                                    <h5><?php echo $c_ventm[0]['total']  ?> PEDIDOS / <?php echo $dventas[0]['total']  ?> UNIDADES</h5>
+                                
+                                </div>
+                                
+                               
+                            </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 order-2 mb-4">
+                <div class="card h-100">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                        <h5 class="card-title m-0 me-2">MEJORES VENDEDORES</h5>
+                        <small class="text-success fw-semibold">
+                            <span class="badge bg-label-success rounded-pill "> <i class="bx bx-up-arrow-alt"></i>  ultimos 30 dias</span>
+                        </small>
+                        
+                        <!--
+                        <div class="dropdown">
+                            <button class="btn p-0" type="button" id="transactionID" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
+                                <a class="dropdown-item" href="javascript:void(0);">Últimos 28 Días</a>
+                                <a class="dropdown-item" href="javascript:void(0);">Último Mes</a>
+                                <a class="dropdown-item" href="javascript:void(0);">Último Año</a>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="card-body">
+                        <ul class="p-0 m-0">
+
+
+
+                            <?php for ($i = 0; $i < count($emplyeds); $i++) { ?>
+
+                                <li class="d-flex mb-4 pb-1">
+                                    <div class="avatar flex-shrink-0 me-3">
+                                        <img src="html/image/personas/<?php echo $emplyeds[$i]['image_name']; ?>"
+                                            alt="Oneplus" class="w-px-40 h-auto rounded-circle">
+                                    </div>
+                                    <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                        <div class="me-2">
+                                            <small class="text-muted d-block mb-1">
+                                                <?php echo $emplyeds[$i]['nombre'] . ' ' . $emplyeds[$i]['primer_apellido'] ?>
+                                            </small>
+                                            <h6 class="mb-0">
+                                                <?php echo $emplyeds[$i]['cantidad_ventas'] ?> UNIDAD(ES) VENDIDAS
+                                            </h6>
+                                        </div>
+                                        <div class="user-progress d-flex align-items-center gap-1">
+                                            <h6 class="mb-0">+$
+                                                <?php echo $emplyeds[$i]['total_ventas']; ?>
+                                            </h6>
+                                            <span class="text-muted">MXN</span>
+                                        </div>
+                                    </div>
+                                </li>
+
+                            <?php } ?>
+
+
+
+
+
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
         <div class="col-12 order-1">
             <div class="row">
 
@@ -25,8 +252,8 @@
                                 </div>
                             </div>
                             <span class="fw-semibold d-block mb-4">PROSPECTOS</span>
-                            <h3 class="card-title mb-2">23</h3>
-                            <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +12 <span
+                            <h3 class="card-title mb-2"><?php echo $c_pros[0]['total'] ?></h3>
+                            <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +<?php echo $c_prosm[0]['total'] ?> <span
                                     class="badge bg-label-success rounded-pill">ultimo 30 dias</span></small>
                         </div>
                     </div>
@@ -53,9 +280,9 @@
                                 </div>
                             </div>
                             <span class="fw-semibold d-block mb-4">CLIENTES</span>
-                            <h3 class="card-title mb-2">53</h3>
-                            <small class="text-success text-nowrap fw-semibold"><i class="bx bx-chevron-up"></i> +12
-                                <span class="badge bg-label-success rounded-pill">ultimo 30 dias</span></small>
+                            <h3 class="card-title mb-2"><?php echo $c_clie[0]['total'] ?></h3>
+                            <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +<?php echo $c_cliem[0]['total'] ?> <span
+                                    class="badge bg-label-success rounded-pill">ultimo 30 dias</span></small>
                         </div>
                     </div>
                 </div>
@@ -80,9 +307,9 @@
                                 </div>
                             </div>
                             <span class="fw-semibold d-block mb-4">PRODUCTOS</span>
-                            <h3 class="card-title mb-2">16</h3>
-                            <small class="text-danger fw-semibold"><i class="bx bx-up-arrow-alt"></i>+0 <span
-                                    class="badge bg-label-danger rounded-pill">ultimo 30 dias</span> </small>
+                            <h3 class="card-title mb-2"><?php echo $c_prod[0]['total'] ?></h3>
+                            <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +<?php echo $c_prodm[0]['total'] ?> <span
+                                    class="badge bg-label-success rounded-pill">ultimo 30 dias</span></small>
                         </div>
                     </div>
                 </div>
@@ -110,8 +337,8 @@
                                 </div>
                             </div>
                             <span class="fw-semibold d-block mb-4">EMPLEADOS</span>
-                            <h3 class="card-title mb-2">6</h3>
-                            <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +12 <span
+                            <h3 class="card-title mb-2"><?php echo $c_empl[0]['total'] ?></h3>
+                            <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +<?php echo $c_emplm[0]['total'] ?> <span
                                     class="badge bg-label-success rounded-pill">ultimo 30 dias</span></small>
                         </div>
                     </div>
@@ -138,8 +365,8 @@
                                 </div>
                             </div>
                             <span class="fw-semibold d-block mb-4">PROVEEDORES</span>
-                            <h3 class="card-title text-nowrap mb-1">44</h3>
-                            <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +12 <span
+                            <h3 class="card-title text-nowrap mb-1"><?php echo $c_prov[0]['total'] ?></h3>
+                            <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +<?php echo $c_provm[0]['total'] ?> <span
                                     class="badge bg-label-success rounded-pill">ultimo 30 dias</span></small>
                         </div>
                     </div>
@@ -165,13 +392,13 @@
                                 </div>
                             </div>
                             <span class="fw-semibold d-block mb-4">VENTAS</span>
-                            <h3 class="card-title mb-2">16</h3>
-                            <small class="text-danger fw-semibold"><i class="bx bx-up-arrow-alt"></i>+0 <span
-                                    class="badge bg-label-danger rounded-pill">ultimo 30 dias</span> </small>
+                            <h3 class="card-title mb-2"><?php echo $c_vent[0]['total'] ?></h3>
+                            <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +<?php echo $c_ventm[0]['total'] ?> <span
+                                    class="badge bg-label-success rounded-pill">ultimo 30 dias</span></small>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-12 mb-3">
+                <div class="col-lg-4 col-md-6 col-12 mb-3">
                     <div class="card">
                         <a href="?modulo=admin&accion=viewpowerbi">
                             <div class="card-body">
@@ -192,21 +419,20 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-6 mb-4">
+                <div class="col-lg-8 mb-4">
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">
                                 <div class="d-flex flex-sm-column align-items-start justify-content-between">
                                     <div class="card-title">
                                         <h5 class="text-nowrap">INFORME</h5>
-                                        <span class="badge bg-label-warning rounded-pill">FEBRERO 2023</span>
+                                        <small class="text-success fw-semibold">
+                            <span class="badge bg-label-success rounded-pill "> <i class="bx bx-up-arrow-alt"></i>  ultimos 30 dias</span>
+                        </small>
                                     </div>
                                     <div class="mt-0">
-                                        <h4 class="mb-3">$14,686.00<small> MXN</small> </h4>
-                                        <small class="text-success text-nowrap fw-semibold"><i
-                                                class="bx bx-chevron-up"></i> 68.2% <span
-                                                class="badge bg-label-success rounded-pill">ultimo 30
-                                                dias</span></small>
+                                        <h4 class="mb-3">$ <?php echo $total[0]['total']; ?> <small> MXN</small> </h4>
+                                       
                                     </div>
                                 </div>
                                 <div id="profileReportChart"></div>
@@ -223,222 +449,7 @@
 
 
         </div>
-        <div class="row">
-            <div class="col-md-6 col-lg-6 col-xl-6 order-0 mb-4">
-                <div class="card h-100">
-                    <div class="card-header d-flex align-items-center justify-content-between">
-                        <h5 class="card-title m-0 me-2">PRODUCTOS MÁS VENDIDOS</h5>
-                        <div class="dropdown">
-                            <button class="btn p-0" type="button" id="transactionID" data-bs-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                <i class="bx bx-dots-vertical-rounded"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
-                                <a class="dropdown-item" href="javascript:void(0);">Últimos 28 Días</a>
-                                <a class="dropdown-item" href="javascript:void(0);">Último Mes</a>
-                                <a class="dropdown-item" href="javascript:void(0);">Último Año</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <div class="d-flex flex-column align-items-center gap-1">
-                                <h2 class="mb-2">87 PEDIDOS</h2>
-                                <span>Total de ordenes</span>
-                            </div>
-                            <div id="orderStatisticsChart"></div>
-                        </div>
-                        <ul class="p-0 m-0">
-                            <li class="d-flex mb-4 pb-1">
-                                <div class="avatar flex-shrink-0 me-3">
-                                    <span class="avatar-initial rounded bg-label-primary"><i
-                                            class="bx bx-brush"></i></span>
-                                </div>
-                                <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                    <div class="me-2">
-                                        <h6 class="mb-0">VINÍLICAS</h6>
-                                        <small class="text-muted">24 PEDIDOS / 17 KG</small>
-                                    </div>
-                                    <div class="user-progress">
-                                        <small class="fw-semibold">$234,234.00 <strong> MXN</strong></small>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="d-flex mb-4 pb-1">
-                                <div class="avatar flex-shrink-0 me-3">
-                                    <span class="avatar-initial rounded bg-label-success"><i
-                                            class="bx bx-building"></i></span>
-                                </div>
-                                <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                    <div class="me-2">
-                                        <h6 class="mb-0">RECUBRIMIENTOS EPÓXICOS</h6>
-                                        <small class="text-muted">17 PEDIDOS / 12 KG</small>
-                                    </div>
-                                    <div class="user-progress">
-                                        <small class="fw-semibold">$93,344.00 <strong> MXN</strong></small>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="d-flex mb-4 pb-1">
-                                <div class="avatar flex-shrink-0 me-3">
-                                    <span class="avatar-initial rounded bg-label-info"><i class="bx bx-home"></i></span>
-                                </div>
-                                <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                    <div class="me-2">
-                                        <h6 class="mb-0">ESMALTES ALQUIDÁLICOS</h6>
-                                        <small class="text-muted">1 PEDIDOS / 100 KG</small>
-                                    </div>
-                                    <div class="user-progress">
-                                        <small class="fw-semibold">$13,344.00 <strong> MXN</strong></small>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="d-flex">
-                                <div class="avatar flex-shrink-0 me-3">
-                                    <span class="avatar-initial rounded bg-label-secondary"><i
-                                            class="bx bx-dots-horizontal-rounded"></i></span>
-                                </div>
-                                <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                    <div class="me-2">
-                                        <h6 class="mb-0">Otros</h6>
-                                        <small class="text-muted">2 PEDIDOS / 30 KG</small>
-                                    </div>
-                                    <div class="user-progress">
-                                        <small class="fw-semibold">$1,006.00 <strong> MXN</strong></small>
-                                    </div>
-                                </div>
-                            </li>
 
-                        </ul>
-                    </div>
-
-                    <p class="d-flex" style="margin-left: 5%;">
-                        <a href="#">Ver estadísticas completas</a>
-
-                    </p>
-
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-6 order-2 mb-4">
-                <div class="card h-100">
-                    <div class="card-header d-flex align-items-center justify-content-between">
-                        <h5 class="card-title m-0 me-2">MEJORES VENDEDORES</h5>
-                        <div class="dropdown">
-                            <button class="btn p-0" type="button" id="transactionID" data-bs-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                <i class="bx bx-dots-vertical-rounded"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
-                                <a class="dropdown-item" href="javascript:void(0);">Últimos 28 Días</a>
-                                <a class="dropdown-item" href="javascript:void(0);">Último Mes</a>
-                                <a class="dropdown-item" href="javascript:void(0);">Último Año</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <ul class="p-0 m-0">
-                            <li class="d-flex mb-4 pb-1">
-                                <div class="avatar flex-shrink-0 me-3">
-                                    <img src="<?php echo ASSETS ?>/img/avatars/1.png" alt="Oneplus"
-                                        class="w-px-40 h-auto rounded-circle">
-                                </div>
-                                <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                    <div class="me-2">
-                                        <small class="text-muted d-block mb-4">Juan Sevasitan Arrollo</small>
-                                        <h6 class="mb-0">34 VENTAS</h6>
-                                    </div>
-                                    <div class="user-progress d-flex align-items-center gap-1">
-                                        <h6 class="mb-0">+$123,560.00 </h6>
-                                        <span class="text-muted">MXN</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="d-flex mb-4 pb-1">
-                                <div class="avatar flex-shrink-0 me-3">
-                                    <img src="<?php echo ASSETS ?>/img/avatars/5.png" alt="Oneplus"
-                                        class="w-px-40 h-auto rounded-circle">
-                                </div>
-                                <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                    <div class="me-2">
-                                        <small class="text-muted d-block mb-1">Octavio Sanches Sill</small>
-                                        <h6 class="mb-0">36 VENTAS</h6>
-                                    </div>
-                                    <div class="user-progress d-flex align-items-center gap-1">
-                                        <h6 class="mb-0">+$141,120.00 </h6>
-                                        <span class="text-muted">MXN</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="d-flex mb-4 pb-1">
-                                <div class="avatar flex-shrink-0 me-3">
-                                    <img src="<?php echo ASSETS ?>/img/avatars/vendedor.jpg" alt="Oneplus"
-                                        class="w-px-40 h-auto rounded-circle">
-                                </div>
-                                <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                    <div class="me-2">
-                                        <small class="text-muted d-block mb-1">Saul Goodman Skik</small>
-                                        <h6 class="mb-0">28 VENTAS</h6>
-                                    </div>
-                                    <div class="user-progress d-flex align-items-center gap-1">
-                                        <h6 class="mb-0">+$103,350.00 </h6>
-                                        <span class="text-muted">MXN</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="d-flex mb-4 pb-1">
-                                <div class="avatar flex-shrink-0 me-3">
-                                    <img src="<?php echo ASSETS ?>/img/avatars/6.png" alt="Oneplus"
-                                        class="w-px-40 h-auto rounded-circle">
-                                </div>
-                                <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                    <div class="me-2">
-                                        <small class="text-muted d-block mb-1">Juan carlos Perez</small>
-                                        <h6 class="mb-0">16 VENTAS</h6>
-                                    </div>
-                                    <div class="user-progress d-flex align-items-center gap-1">
-                                        <h6 class="mb-0">+$63,480.00 </h6>
-                                        <span class="text-muted">MXN</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="d-flex mb-4 pb-1">
-                                <div class="avatar flex-shrink-0 me-3">
-                                    <img src="<?php echo ASSETS ?>/img/avatars/7.png" alt="Oneplus"
-                                        class="w-px-40 h-auto rounded-circle">
-                                </div>
-                                <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                    <div class="me-2">
-                                        <small class="text-muted d-block mb-1">Gloria Salazar Guill</small>
-                                        <h6 class="mb-0">10 VENTAS</h6>
-                                    </div>
-                                    <div class="user-progress d-flex align-items-center gap-1">
-                                        <h6 class="mb-0">+$23,390.00 </h6>
-                                        <span class="text-muted">MXN</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="d-flex">
-                                <div class="avatar flex-shrink-0 me-3">
-                                    <img src="<?php echo ASSETS ?>/img/avatars/1.png" alt="Oneplus"
-                                        class="w-px-40 h-auto rounded-circle">
-                                </div>
-                                <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                    <div class="me-2">
-                                        <small class="text-muted d-block mb-1">Francisco Perez Acosta</small>
-                                        <h6 class="mb-0">6 VENTAS</h6>
-                                    </div>
-                                    <div class="user-progress d-flex align-items-center gap-1">
-                                        <h6 class="mb-0">+$12,810.00 </h6>
-                                        <span class="text-muted">MXN</span>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-        </div>
 
 
 

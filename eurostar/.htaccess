@@ -1,4 +1,4 @@
-ErrorDocument 404 http://192.168.21.63/eurostar/
+ErrorDocument 404 http://192.168.0.14/eurostar/
 Options -Indexes
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-d

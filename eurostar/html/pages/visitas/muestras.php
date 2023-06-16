@@ -187,8 +187,16 @@
         ?>
         {
             id: "<?php echo $muestras[$i]['id_muestras'] ?>",
-            name: "<?php echo $muestras[$i]['nombre_muestra'] ?>",
-            description: "Entregar a "+'<?php echo $muestras[$i]['nombre']?>'+" ,"+'<?php echo $muestras[$i]['nombre_muestra']?>'+" con las siguientes especificaciones: "+'<?php echo $muestras[$i]['descripcion_muestra']?>',
+            name: "<?php echo strtoupper($muestras[$i]['nombre_muestra']) ?>",
+            description: "Entregar a "+'<?php echo $muestras[$i]['nombre'].' '.$muestras[$i]['primer_apellido']?>, '+'<?php 
+            for ($j=0; $j < count($empresas); $j++) { 
+                if($muestras[$i]['fk_id_empresa']==$empresas[$j]['id_empresa']){
+                    echo ' de la empresa '.$empresas[$j]['nombre_emp'].', ';
+                }else{
+                    echo '';
+                }
+            }
+            ?>'+'<?php echo 'la muestra: '.strtoupper($muestras[$i]['nombre_muestra'])?>'+", con las siguientes especificaciones: "+'<?php echo $muestras[$i]['descripcion_muestra']?>',
             date: "<?php echo date("Y-m-d",strtotime($muestras[$i]['fecha_compromiso'].'+ 1 days')); ?>",
             type: "event"
         },

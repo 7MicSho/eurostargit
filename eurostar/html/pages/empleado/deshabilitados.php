@@ -1,3 +1,13 @@
+<?php if(isset($_GET['ok'])){  ?>
+<script>
+    Swal.fire({
+                icon: 'success',
+                title: 'AGREGADO',
+                text: 'El empleado se han guardado correctamente',
+                footer: ''
+            })
+</script>
+<?php } ?>
 <div class="col-12 text-center titlebanner-seller">
     <h1 class="display-3 txt-title" style="margin: 0;"> Empleados Deshabilitados</h1>
 </div>
@@ -6,25 +16,25 @@
 
         <div class="container-xxl flex-grow-1 container-p-y">
             <div class="row">
-                <div class="col-lg-4 col-md-12 order-0">
+                <div class="col-lg-4 col-md-12" style="width: 32%; margin-right:10px" >
+                    
+                </div>
+                <div class="col-lg-4 col-md-12 " style="width: 32%;  margin-right:10px" >
+              
+                </div>
+
+                <div class="col-lg-4 col-md-12" style="width: 32%;">
                     <a href="?modulo=empleado&accion=home">
                         <div class="d-flex align-items-center row">
                             <div class="col-sm-12 bg-success text-center"
                                 style="color: white; border-radius: 10px 10px 10px 10px;">
-                                <i class="fa-solid fa-user fa-2x mt-4"></i>
+                                <i class="fa-solid fa-user-times fa-2x mt-4"></i>
                                 <p class="mt-1 pb-1">
-                                    Empleados Habilitados
+                                Empleados habilitados
                                 </p>
                             </div>
                         </div>
                     </a>
-                </div>
-                <div class="col-lg-4 col-md-12 order-1">
-                    <br>
-                </div>
-
-                <div class="col-lg-4 col-md-12 order-3">
-                    
                 </div>
             </div>
 
@@ -123,7 +133,7 @@
                                                     '<?php echo $vendedores[$i]['telefonos'] ?>',
                                                     '<?php echo $vendedores[$i]['direcciones'] ?>'
                                                     
-                                                    );"><i class="bx bx-edit-alt me-1"></i> Editar vendedor</a>
+                                                    );"><i class="bx bx-edit-alt me-1"></i> Editar Empleado</a>
 
                                                     <a class="dropdown-item" href="?modulo=vendedor&accion=ventas&id=<?php echo $vendedores[$i]['id_persona'] ?>"><i
                                                             class="bx bx-money me-1"></i> Ver ventas</a>
@@ -163,7 +173,7 @@
 
 
                             <div class="row d-flex mb-2">
-                                <div class="col-6 col-md-3 text-center text-danger">Información de contacto</div>
+                                <div class="col-6 col-md-3 text-center text-danger" style="text-transform: uppercase;">Información de contacto</div>
                                 <hr class="mt-2 mb-3 col-6 col-md-9">
                             </div>
                             <div class="row clonarcontact">
@@ -174,7 +184,7 @@
                                     <div class="input-group input-group-merge">
                                         <span id="basic-icon-default-fullname2" class="input-group-text"><i
                                                 class="bx bx-user text-danger"></i></span>
-                                        <input type="text" class="form-control" id="nom" placeholder="Nombre(s)"
+                                        <input type="text" class="form-control p-2" id="nom" placeholder="Nombre(s)"
                                             name="nom" aria-label="Nombre(s)"
                                             aria-describedby="basic-icon-default-fullname2" require />
                                     </div>
@@ -183,8 +193,9 @@
                                     <label class="form-label" for="basic-icon-default-fullname">Primer apellido
                                         <strong class="text-danger">*</strong></label>
                                     <div class="input-group input-group-merge">
-                                        <span id="basic-icon-default-fullname2" class="input-group-text"></span>
-                                        <input type="text" class="form-control" id="pape" placeholder="Primer apellido"
+                                    <span id="basic-icon-default-fullname2" class="input-group-text"><i
+                                                class="bx bx-user text-danger"></i></span>
+                                        <input type="text" class="form-control p-2" id="pape" placeholder="Primer apellido"
                                             name="pape" aria-label="Primer apellido"
                                             aria-describedby="basic-icon-default-fullname2" require />
                                     </div>
@@ -193,8 +204,9 @@
                                     <label class="form-label" for="basic-icon-default-fullname">Segundo apellido
                                         <strong class="text-danger">*</strong></label>
                                     <div class="input-group input-group-merge">
-                                        <span id="basic-icon-default-fullname2" class="input-group-text"></span>
-                                        <input type="text" class="form-control" id="sape" placeholder="Segundo apellido"
+                                    <span id="basic-icon-default-fullname2" class="input-group-text"><i
+                                                class="bx bx-user text-danger"></i></span>
+                                        <input type="text" class="form-control p-2" id="sape" placeholder="Segundo apellido"
                                             name="sape" aria-label="Segundo apellido"
                                             aria-describedby="basic-icon-default-fullname2" require />
                                     </div>
@@ -206,13 +218,14 @@
                                         <span id="basic-icon-default-fullname2" class="input-group-text"><i
                                                 class="bx bx-user text-danger"></i></span>
                                                 <select class="form-select" name="" id="temp">
-                                                <option value="0" selected>Vendedor</option>
-                                                <option value="1">Compras</option>
-                                                <option value="2">Calidad</option>
-                                                <option value="3">Producción</option>
-                                                <option value="4">Jefe de Ventas</option>
-                                                <option value="5">Jefe de Mercadotecnia</option>
-                                                <option value="6">Administrador</option>
+                                                <option value="vendedor movil" selected>Vendedor</option>
+                                                <option value="vendedor mostrador">Mostrador</option>
+                                                <option value="compras">Compras</option>
+                                                <option value="calidad">Calidad</option>
+                                                <option value="producción">Producción</option>
+                                                <option value="jefe de ventas">Jefe de Ventas</option>
+                                                <option value="jefe de mercadotecnia">Jefe de Mercadotecnia</option>
+                                                <option value="administrador">Administrador</option>
                                                 </select>
                                         
                                         
@@ -222,8 +235,9 @@
                                     <label class="form-label" for="basic-icon-default-fullname">Sueldo
                                         <strong class="text-danger">*</strong></label>
                                     <div class="input-group input-group-merge">
-                                        <span id="basic-icon-default-fullname2" class="input-group-text"></span>
-                                        <input type="text" class="form-control" id="suel" placeholder="Segundo apellido"
+                                    <span id="basic-icon-default-fullname2" class="input-group-text"><i
+                                                class="bx bx-money text-danger"></i></span>
+                                        <input type="text" class="form-control p-2" id="suel" placeholder="Segundo apellido"
                                             name="suel" aria-label="Segundo apellido"
                                             aria-describedby="basic-icon-default-fullname2" require />
                                     </div>
@@ -232,8 +246,9 @@
                                     <label class="form-label" for="basic-icon-default-fullname">Nomina
                                         <strong class="text-danger">*</strong></label>
                                     <div class="input-group input-group-merge">
-                                        <span id="basic-icon-default-fullname2" class="input-group-text"></span>
-                                        <input type="text" class="form-control" id="nomi" placeholder="Segundo apellido"
+                                    <span id="basic-icon-default-fullname2" class="input-group-text"><i
+                                                class="bx bx-credit-card text-danger"></i></span>
+                                        <input type="text" class="form-control p-2" id="nomi" placeholder="Segundo apellido"
                                             name="nomi" aria-label="Segundo apellido"
                                             aria-describedby="basic-icon-default-fullname2" require />
                                     </div>
@@ -242,9 +257,8 @@
                                     <label class="form-label" for="basic-icon-default-fullname">SELECCIONA Correo
                                         <strong class="text-danger">*</strong></label>
                                     <div class="input-group input-group-merge">
-                                        <span id="basic-icon-default-fullname2" class="input-group-text">
-                                            <i class="bx bx-hash text-danger"></i>
-                                        </span>
+                                    <span id="basic-icon-default-fullname2" class="input-group-text"><i
+                                                class="bx bx-envelope text-danger"></i></span>
                                         <select class="form-select" name="" id="selectemail">
                                             <option value="0" selected disabled>...</option>
                                         </select>
@@ -256,7 +270,7 @@
                                     <div class="input-group input-group-merge">
                                         <span id="basic-icon-default-fullname2" class="input-group-text"><i
                                                 class="bx bx-envelope text-danger"></i></span>
-                                        <input style="text-transform: lowercase;" type="text" class="form-control"
+                                        <input style="text-transform: lowercase;" type="text" class="form-control p-2"
                                             id="correo" placeholder="Correo eléctronico" name="correo"
                                             aria-label="Número de teléfono"
                                             aria-describedby="basic-icon-default-fullname2" require />
@@ -269,9 +283,8 @@
                                     <label class="form-label" for="basic-icon-default-fullname">SELECCIONA Telefono
                                         <strong class="text-danger"></strong></label>
                                     <div class="input-group input-group-merge">
-                                        <span id="basic-icon-default-fullname2" class="input-group-text">
-                                            <i class="bx bx-hash text-danger"></i>
-                                        </span>
+                                    <span id="basic-icon-default-fullname2" class="input-group-text"><i
+                                                class="bx bx-phone-call text-danger"></i></span>
                                         <select class="form-select" name="" id="selecttel">
                                             <option value="" selected disabled>...</option>
                                         </select>
@@ -286,7 +299,7 @@
                                     <div class="input-group input-group-merge">
                                         <span id="basic-icon-default-fullname2" class="input-group-text"><i
                                                 class="bx bx-phone-call text-danger"></i></span>
-                                        <input type="text" class="form-control" id="cod2" placeholder="Código"
+                                        <input type="text" class="form-control p-2" id="cod2" placeholder="Código"
                                             name="cod2" aria-label="Código"
                                             aria-describedby="basic-icon-default-fullname2" require />
                                     </div>
@@ -299,7 +312,7 @@
                                     <div class="input-group input-group-merge">
                                         <span id="basic-icon-default-fullname2" class="input-group-text"><i
                                                 class="bx bx-phone-call text-danger"></i></span>
-                                        <input type="text" class="form-control" id="lada2" placeholder="LADA"
+                                        <input type="text" class="form-control p-2" id="lada2" placeholder="LADA"
                                             name="lada2" aria-label="LADA"
                                             aria-describedby="basic-icon-default-fullname2" require />
                                     </div>
@@ -310,7 +323,7 @@
                                     <div class="input-group input-group-merge">
                                         <span id="basic-icon-default-fullname2" class="input-group-text"><i
                                                 class="bx bx-phone-call text-danger"></i></span>
-                                        <input type="text" class="form-control" id="tel2"
+                                        <input type="text" class="form-control p-2" id="tel2"
                                             placeholder="Número de teléfono" name="tel2" aria-label="Número de teléfono"
                                             aria-describedby="basic-icon-default-fullname2" require />
                                     </div>
@@ -318,7 +331,7 @@
                                 <hr>
                             </div>
                             <div class="row d-flex mt-4">
-                                <div class="col-3 text-center text-danger">Dirección</div>
+                                <div class="col-3 text-center text-danger" style="text-transform: uppercase;">Dirección</div>
                                 <hr class="mt-2 mb-3 col-9">
                             </div>
                             <div class="row mb-4">
@@ -337,9 +350,9 @@
                                     <label class="form-label" for="basic-icon-default-fullname">Calle <strong
                                             class="text-danger">*</strong></label>
                                     <div class="input-group input-group-merge">
-                                        <span id="basic-icon-default-fulladdress2" class="input-group-text"><i
+                                    <span id="basic-icon-default-fulladdress2" class="input-group-text"><i
                                                 class="bx bx-buildings text-danger"></i></span>
-                                        <input type="text" class="form-control" id="calle" placeholder="Calle"
+                                        <input type="text" class="form-control p-2" id="calle" placeholder="Calle"
                                             name="calle" aria-label="Calle"
                                             aria-describedby="basic-icon-default-fullname2" require />
                                     </div>
@@ -348,46 +361,50 @@
                                     <label class="form-label" for="basic-icon-default-fullname">N exterior<strong
                                             class="text-danger">*</strong></label>
                                     <div class="input-group input-group-merge">
-                                        <span id="basic-icon-default-fulladdress2" class="input-group-text"><i
-                                                class="bx bx-hash text-danger"></i></span>
-                                        <input type="text" class="form-control" id="num" aria-label="Numero exterior"
+                                    <span id="basic-icon-default-fulladdress2" class="input-group-text"><i
+                                                class="bx bx-buildings text-danger"></i></span>
+                                        <input type="text" class="form-control p-2" id="num" aria-label="Numero exterior"
                                             name="num" aria-describedby="basic-icon-default-fullname2" require />
                                     </div>
                                 </div>
                                 <div class="mb-3 col-6 col-md-3">
                                     <label class="form-label" for="basic-icon-default-fullname">N interior</label>
                                     <div class="input-group input-group-merge">
-                                        <span id="basic-icon-default-fulladdress2" class="input-group-text"><i
-                                                class="bx bx-hash text-danger"></i></span>
-                                        <input type="text" class="form-control" id="numint" aria-label="Numero exterior"
+                                    <span id="basic-icon-default-fulladdress2" class="input-group-text"><i
+                                                class="bx bx-buildings text-danger"></i></span>
+                                        <input type="text" class="form-control p-2" id="numint" aria-label="Numero exterior"
                                             name="numint" aria-describedby="basic-icon-default-fullname2" />
                                     </div>
                                 </div>
                                 <div class="mb-3 col-12 col-md-6">
                                     <label for="exampleFormControlInput" class="form-label">Entre calles <strong
                                             class="text-danger">*</strong></label>
-                                    <input type="text" class="form-control" id="entcalles" placeholder="Entre calles"
+                                            <div class="input-group input-group-merge">
+                                            <span id="basic-icon-default-fulladdress2" class="input-group-text"><i
+                                                class="bx bx-buildings text-danger"></i></span>
+                                    <input type="text" class="form-control p-2" id="entcalles" placeholder="Entre calles"
                                         aria-label="Numero exterior" aria-describedby="basic-icon-default-fullname2"
                                         name="entcalles" />
+                                            </div>
                                 </div>
-                                <div class="mb-3 col-12 col-md-4">
+                                <div class="mb-3 col-12 col-md-3">
                                     <label class="form-label" for="basic-icon-default-fullname">Código postal <strong
                                             class="text-danger">*</strong></label>
                                     <div class="input-group input-group-merge">
-                                        <span id="basic-icon-default-fulladdress2" class="input-group-text"><i
-                                                class="bx bx-hash text-danger"></i></span>
-                                        <input type="number" class="form-control" id="cp" placeholder="XXXX" name="cp"
+                                    <span id="basic-icon-default-fulladdress2" class="input-group-text"><i
+                                                class="bx bx-buildings text-danger"></i></span>
+                                        <input type="number" class="form-control p-2" id="cp" placeholder="XXXX" name="cp"
                                             aria-label="Numero exterior"
                                             aria-describedby="basic-icon-default-fullname2" />
                                     </div>
                                 </div>
-                                <div class="mb-3 col-12 col-md-4">
+                                <div class="mb-3 col-12 col-md-5">
                                     <label class="form-label" for="basic-icon-default-fullname">Colonia <strong
                                             class="text-danger">*</strong></label>
                                     <div class="input-group input-group-merge">
-                                        <span id="" class="input-group-text"><i
-                                                class="bx bx-hash text-danger"></i></span>
-                                        <input type="text" class="form-control" id="col" placeholder="Colonia"
+                                    <span id="basic-icon-default-fulladdress2" class="input-group-text"><i
+                                                class="bx bx-buildings text-danger"></i></span>
+                                        <input type="text" class="form-control p-2" id="col" placeholder="Colonia"
                                             name="col" aria-label="Numero exterior"
                                             aria-describedby="basic-icon-default-fullname2" />
                                     </div>
@@ -396,9 +413,9 @@
                                     <label class="form-label" for="basic-icon-default-fullname">Municipio <strong
                                             class="text-danger">*</strong></label>
                                     <div class="input-group input-group-merge">
-                                        <span id="" class="input-group-text"><i
-                                                class="bx bx-hash text-danger"></i></span>
-                                        <input type="text" class="form-control" id="mun" placeholder="XXXX" name="mun"
+                                    <span id="basic-icon-default-fulladdress2" class="input-group-text"><i
+                                                class="bx bx-buildings text-danger"></i></span>
+                                        <input type="text" class="form-control p-2" id="mun" placeholder="XXXX" name="mun"
                                             aria-label="Numero exterior"
                                             aria-describedby="basic-icon-default-fullname2" />
                                     </div>
@@ -406,6 +423,9 @@
                                 <div class="mb-3 col-12 col-md-6">
                                     <label for="exampleFormControlSelect1" class="form-label">Estado <strong
                                             class="text-danger">*</strong></label>
+                                            <div class="input-group input-group-merge">
+                                            <span id="basic-icon-default-fulladdress2" class="input-group-text"><i
+                                                class="bx bx-buildings text-danger"></i></span>
                                     <select class="form-select" id="est" aria-label="Default select example" name="est"
                                         required>
                                         <option value="">Estado</option>
@@ -442,94 +462,140 @@
                                         <option value="Yucatán">Yucatán</option>
                                         <option value="Zacatecas">Zacatecas</option>>
                                     </select>
+
+                                </div>
                                 </div>
                                 <div class="mb-3 col-12 col-md-6">
                                     <label for="exampleFormControlSelect1" class="form-label">País <strong
                                             class="text-danger">*</strong></label>
-                                    <input type="text" class="form-control" id="pais" placeholder="País"
+                                            <div class="input-group input-group-merge">
+                                            <span id="basic-icon-default-fulladdress2" class="input-group-text"><i
+                                                class="bx bx-buildings text-danger"></i></span>
+                                    <input type="text" class="form-control p-2" id="pais" placeholder="País"
                                         aria-label="Numero exterior" aria-describedby="basic-icon-default-fullname2"
                                         name="pais" value="México" />
+                                </div>
                                 </div>
             
 
                             </div>
                             <div class="row d-flex mt-4">
-                                <div class="col-3 text-center text-danger">Opciones extra</div>
-                                <hr class="mt-2 mb-3 col-9">
-                            </div>
+                            <hr class="mt-2 mb-3 col-4">
+                                <div class="col-4 text-center text-danger" style="text-transform: uppercase;">Opciones extra</div>
+                                <hr class="mt-2 mb-3 col-4">
+                            </div><br>
                             <div class="row">
 
                                 <div class="mb-3 col-md-4">
-                                    <label class="form-label" for="basic-icon-default-fullname">Habilitar Empleado
-                                        <strong class="text-danger">*</strong></label><br>
-                                        <div class="col-12 d-flex justify-content-center">
-                                    <a href="" id="adown"  class="btn btn-success d-flex align-items-center mt-5">
-                                        <div>Habilitar</div> <i
-                                            class="fa-solid fa-user-times fa-2x" style=""></i> 
-                                                    </a>
-                                
+                                    <div class="col-12 d-flex justify-content-center">
+                                            <center><label class="form-label" for="basic-icon-default-fullname">Deshabilitar Empleado
+                                                <strong class="text-danger">*</strong></label><center>
+                                            <a href="" id="adown"  class="btn btn-danger d-flex align-items-center">
+                                                <div>DESHABILITAR</div> <i
+                                                    class="fa-solid fa-user-times fa-2x"></i> 
+                                            </a>
+                                            
+                                        </div>
+                                    
+                                </div>
+                                <div class="mb-3 col-md-4">
+                                   
+                                        <div class="col-12 d-flex justify-content-center" id="divedit" >
+                                        
+                                        </div>
+
+                                        <div class="col-12 d-flex justify-content-center" id="divsave" >
+                                        
+                                        </div>
+                                    
+                                </div>
+                                <div class="mb-3 col-md-4">
+                                    <div class="col-12 d-flex justify-content-center">
+                                            <center><label class="form-label" for="basic-icon-default-fullname">HISTORIAL
+                                            <strong class="text-info">*</strong></label><center>
+
+                                            <button type="button" onclick="onedit()"  style="margin: 2px;" class="btn btn-info d-flex align-items-center mt-2">
+                                            <div style="margin-right: 10%;">HISTORIAL </div> <i
+                                                class="fa-solid fa-list fa-2x" ></i>
+                                        </button>
+                                    </div>
                                     
                                 </div>
                             </div>
 
 
-                            <div class="col-12 d-flex justify-content-center">
-                                <button style="margin: 2px;" type="submit" class="btn btn-success d-flex align-items-center mt-5">
-                                    <div style="margin-right: 10%;">Actualizar datos</div> <i
-                                        class="fa-solid fa-floppy-disk fa-2x" style=""></i>
-                                </button>
-                            </div>
+                           
                         </form>
                     </div>
 
                 </div>
             </div>
         </div>
+    
     </div>
 </div>
 
 
 <script>
+    function onedit(){
+        Swal.fire({
+                icon: 'success',
+                title: 'AGREGADO',
+                text: 'El empleado se han guardado correctamente',
+                footer: '',
+                toast:true, 
+            })
+        document.getElementById("divsave").innerHTML=" <center><label class='form-label' for='basic-icon-default-fullname'>GUARDAR CAMBIOS   <strong class='text-info'>*</strong></label><center><button style='margin: 2px;' type='submit'  class='btn btn-success d-flex align-items-center mt-2'><div style='margin-right: 10%;'>GUARDAR </div> <iclass='fa-solid fa-floppy-disk fa-2x' ></i></button>";
+        document.getElementById("divedit").innerHTML="";
+        document.getElementById("nom").disabled=false;
+        document.getElementById("pape").disabled=false;
+        document.getElementById("sape").disabled=false;
+        document.getElementById("temp").disabled=false;
+        document.getElementById("suel").disabled=false;
+        document.getElementById("nomi").disabled=false;
+
+
+
+        document.getElementById("correo").disabled=false;
+        document.getElementById("selectemail").disabled=false;
+        document.getElementById("cod2").disabled=false;
+        document.getElementById("lada2").disabled=false;
+        document.getElementById("tel2").disabled=false;
+        document.getElementById("selecttel").disabled=false;
+        document.getElementById("selectdireccion").disabled=false;
+        document.getElementById("calle").disabled=false;
+        document.getElementById("num").disabled=false;
+        document.getElementById("numint").disabled=false;
+        document.getElementById("entcalles").disabled=false;
+        document.getElementById("cp").disabled=false;
+        document.getElementById("col").disabled=false;
+        document.getElementById("mun").disabled=false;
+        document.getElementById("est").disabled=false;
+        document.getElementById("pais").disabled=false;
+    }
     function abrirModal(i,n, p, s, te, su, no, c, t, d) {
         $('#modalVentas').modal('show');
-
+        document.getElementById("divsave").innerHTML="" ;
+        document.getElementById("divedit").innerHTML="<center><label class='form-label' for='basic-icon-default-fullname'>Habilitar edicion<strong class='text-warning'>*</strong></label><center><button type='button' onclick='onedit()'  style='margin: 2px;'  id='btnedit' class='btn btn-warning d-flex align-items-center mt-2'><div style='margin-right: 10%;'>EDITAR </div> <i class='fa-solid fa-pencil fa-2x' ></i></button>";
         document.getElementById("nom").value = n;
         document.getElementById("pape").value = p;
         document.getElementById("sape").value = s;
        
-        document.getElementById("suel").value = '$' + su + '.00';
+        document.getElementById("suel").value = '$' + su + ".00";
         document.getElementById("nomi").value = no;
         const selecttemp = document.getElementById("temp");
         
-        if (te == 'vendedor') {
-    nuevo= 0;
-} else if (te == 'compras') {
-    nuevo= 1;
-} else if (te == 'calidad') {
-    nuevo= 2;
-} else if (te == 'produccion') {
-    nuevo= 3;
-} else if (te == 'jefe_ventas') {
-    nuevo= 4;
-} else if (te == 'jefe_mercadotecnia') {
-    nuevo= 5;
-} else if (te == 'administrador') {
-    nuevo= 6;
-}
 
-
-        selecttemp.value = nuevo;
+        selecttemp.value = te;
+        document.getElementById("adown").href = "?modulo=empleado&accion=downvendedor&id="+i;
 
 
         
 
-        document.getElementById("adown").href = "?modulo=empleado&accion=downvendedor&id="+i;
-
-
         const selectmails = document.getElementById("selectemail");
         const inputemail = document.getElementById('correo');
-        inputemail.value = '';
         const mails = c.split(",");
+        inputemail.value = '';
 
         if ((mails[0].split("|"))[0] == ' ') {
             selectmails.disabled = true;
@@ -548,12 +614,12 @@
         }
 
         const valorSeleccionadoInicial = selectmails.value;
-        valorSeleccionadoInicial == 'undefined' ? (selectmails.disabled = true)
+        valorSeleccionadoInicial == "undefined" ? (selectmails.disabled = true)
             : (inputemail.value = valorSeleccionadoInicial);
 
         selectmails.addEventListener("change", function () {
             const valorSeleccionado = selectmails.value;
-            valorSeleccionado == 'undefined' ? (selectmails.disabled = true)
+            valorSeleccionado == "undefined" ? (selectmails.disabled = true)
                 : (inputemail.value = valorSeleccionado);
         });
 
@@ -590,107 +656,135 @@
             selecttel.disabled = true;
         } else {
 
-            document.getElementById('cod2').value = "+" + (valorSeleccionadoTel.split("|"))[1];
-            document.getElementById('lada2').value = (valorSeleccionadoTel.split("|"))[2];
-            document.getElementById('tel2').value = (valorSeleccionadoTel.split("|"))[3];
+            document.getElementById("cod2").value = "+" + (valorSeleccionadoTel.split("|"))[1];
+            document.getElementById("lada2").value = (valorSeleccionadoTel.split("|"))[2];
+            document.getElementById("tel2").value = (valorSeleccionadoTel.split("|"))[3];
         }
 
         selecttel.addEventListener("change", function () {
             const valorSeleccionado = selecttel.value;
-            if (valorSeleccionado != '') {
-                document.getElementById('cod2').value = "+" + (valorSeleccionado.split("|"))[1];
-                document.getElementById('lada2').value = (valorSeleccionado.split("|"))[2];
-                document.getElementById('tel2').value = (valorSeleccionado.split("|"))[3];
+            if (valorSeleccionado != "") {
+                document.getElementById("cod2").value = "+" + (valorSeleccionado.split("|"))[1];
+                document.getElementById("lada2").value = (valorSeleccionado.split("|"))[2];
+                document.getElementById("tel2").value = (valorSeleccionado.split("|"))[3];
             } else {
-                document.getElementById('cod2').value = '7';
-                document.getElementById('lada2').value = '';
-                document.getElementById('tel2').value = '';
+                document.getElementById("cod2").value = "";
+                document.getElementById("lada2").value = "";
+                document.getElementById("tel2").value = "";
             }
         });
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         const selectdireccion = document.getElementById("selectdireccion");
-const inputcalle = document.getElementById('calle');
-const inputnum = document.getElementById('num');
-const inputnumint = document.getElementById('numint');
-const inputcol = document.getElementById('col');
-const inputentre = document.getElementById('entcalles');
-const inputmun = document.getElementById('mun');
-const inputest = document.getElementById('est');
-const inputcp = document.getElementById('cp');
-const inputpais = document.getElementById('pais');
+        const inputcalle = document.getElementById('calle');
+        const inputnum = document.getElementById('num');
+        const inputnumint = document.getElementById('numint');
+        const inputcol = document.getElementById('col');
+        const inputentre = document.getElementById('entcalles');
+        const inputmun = document.getElementById('mun');
+        const inputest = document.getElementById('est');
+        const inputcp = document.getElementById('cp');
+        const inputpais = document.getElementById('pais');
 
-const direcciones = d.split(",");
+        const direcciones = d.split(",");
 
-inputcalle.value = '';
-inputnum.value = '';
-inputnumint.value = '';
-inputcol.value = '';
-inputentre.value = '';
-inputmun.value = '';
-inputest.value = '';
-inputcp.value = '';
-inputpais.value = '';
-
-if ((direcciones[0].split("|"))[0] == ' ') {
-    selectdireccion.disabled = true;
-} else {
-    selectdireccion.innerHTML = "";
-    selectdireccion.disabled = false;
-
-    for (let index = 0; index < direcciones.length; index++) {
-        const o = document.createElement("option");
-        const direccion = direcciones[index].split("|");
-        o.text = (direccion)[1];
-        o.value = direcciones[index];
-        selectdireccion.add(o);
-    }
-}
-
-const valorSeleccionadoDireccion = selectdireccion.value;
-selectdireccion.disabled = false;
-
-if (typeof (valorSeleccionadoDireccion.split("|"))[1] === 'undefined') {
-    selectdireccion.innerHTML = "";
-    selectdireccion.disabled = true;
-} else {
-    const direccionSeleccionada = valorSeleccionadoDireccion.split("|");
-    inputcalle.value = direccionSeleccionada[1];
-    inputnum.value = direccionSeleccionada[2];
-    inputcol.value = direccionSeleccionada[3];
-    inputentre.value = direccionSeleccionada[4];
-    inputmun.value = direccionSeleccionada[5];
-    inputest.value = direccionSeleccionada[6];
-    inputpais.value = direccionSeleccionada[7];
-    inputcp.value = direccionSeleccionada[8];
-    inputnumint.value = direccionSeleccionada[9];
-}
-
-selectdireccion.addEventListener("change", function () {
-    const valorSeleccionado = selectdireccion.value;
-    if (valorSeleccionado != '') {
-        const direccionSeleccionada = valorSeleccionado.split("|");
-        inputcalle.value = direccionSeleccionada[1];
-        inputnum.value = direccionSeleccionada[2];
-        inputcol.value = direccionSeleccionada[3];
-        inputentre.value = direccionSeleccionada[4];
-        inputmun.value = direccionSeleccionada[5];
-        inputest.value = direccionSeleccionada[6];
-        inputpais.value = direccionSeleccionada[7];
-        inputcp.value = direccionSeleccionada[8];
-        inputnumint.value = direccionSeleccionada[9];
-    } else {
         inputcalle.value = '';
         inputnum.value = '';
+        inputnumint.value = '';
         inputcol.value = '';
         inputentre.value = '';
         inputmun.value = '';
         inputest.value = '';
-        inputpais.value = '';
         inputcp.value = '';
-        inputnumint.value = '';
-    }
-});
+        inputpais.value = '';
+
+        if ((direcciones[0].split("|"))[0] == ' ') {
+            selectdireccion.disabled = true;
+        } else {
+            selectdireccion.innerHTML = "";
+            selectdireccion.disabled = false;
+
+            for (let index = 0; index < direcciones.length; index++) {
+                const o = document.createElement("option");
+                const direccion = direcciones[index].split("|");
+                o.text = (direccion)[1];
+                o.value = direcciones[index];
+                selectdireccion.add(o);
+            }
+        }
+
+        const valorSeleccionadoDireccion = selectdireccion.value;
+        selectdireccion.disabled = false;
+
+        if (typeof (valorSeleccionadoDireccion.split("|"))[1] === 'undefined') {
+            selectdireccion.innerHTML = "";
+            selectdireccion.disabled = true;
+        } else {
+            const direccionSeleccionada = valorSeleccionadoDireccion.split("|");
+            inputcalle.value = direccionSeleccionada[1];
+            inputnum.value = direccionSeleccionada[2];
+            inputcol.value = direccionSeleccionada[3];
+            inputentre.value = direccionSeleccionada[4];
+            inputmun.value = direccionSeleccionada[5];
+            inputest.value = direccionSeleccionada[6];
+            inputpais.value = direccionSeleccionada[7];
+            inputcp.value = direccionSeleccionada[8];
+            inputnumint.value = direccionSeleccionada[9];
+        }
+
+        selectdireccion.addEventListener("change", function () {
+            const valorSeleccionado = selectdireccion.value;
+            if (valorSeleccionado != '') {
+                const direccionSeleccionada = valorSeleccionado.split("|");
+                inputcalle.value = direccionSeleccionada[1];
+                inputnum.value = direccionSeleccionada[2];
+                inputcol.value = direccionSeleccionada[3];
+                inputentre.value = direccionSeleccionada[4];
+                inputmun.value = direccionSeleccionada[5];
+                inputest.value = direccionSeleccionada[6];
+                inputpais.value = direccionSeleccionada[7];
+                inputcp.value = direccionSeleccionada[8];
+                inputnumint.value = direccionSeleccionada[9];
+            } else {
+                inputcalle.value = '';
+                inputnum.value = '';
+                inputcol.value = '';
+                inputentre.value = '';
+                inputmun.value = '';
+                inputest.value = '';
+                inputpais.value = '';
+                inputcp.value = '';
+                inputnumint.value = '';
+            }
+        });
+
+        //////////////////////////////////////////////////////////////////////
+
+document.getElementById("nom").disabled=true;
+document.getElementById("pape").disabled=true;
+document.getElementById("sape").disabled=true;
+document.getElementById("temp").disabled=true;
+document.getElementById("suel").disabled=true;
+document.getElementById("nomi").disabled=true;
+
+
+
+document.getElementById("correo").disabled=true;
+document.getElementById("cod2").disabled=true;
+document.getElementById("lada2").disabled=true;
+document.getElementById("tel2").disabled=true;
+document.getElementById("calle").disabled=true;
+document.getElementById("num").disabled=true;
+document.getElementById("numint").disabled=true;
+document.getElementById("entcalles").disabled=true;
+document.getElementById("cp").disabled=true;
+document.getElementById("col").disabled=true;
+document.getElementById("mun").disabled=true;
+document.getElementById("est").disabled=true;
+document.getElementById("pais").disabled=true;
+
+
+
 
     }
 </script>

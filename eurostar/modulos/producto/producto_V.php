@@ -48,6 +48,18 @@
 			$this->_contenido = 'html/pages/producto/vinilicas/paris1000.php';
 			require_once ESTRUCTURA.'estructura.php';		
 		}
+
+		public function dashproductos($data,$tipoproductos,$tipocompuesto)
+		{
+			$this->_contenido = 'html/pages/producto/dashproductos.php';
+			require_once ESTRUCTURA.'estructura.php';		
+		}
+
+		public function agregarproducto($tipoproductos,$tipocompuesto)
+		{
+			$this->_contenido = 'html/pages/producto/agregarproducto.php';
+			require_once ESTRUCTURA.'estructura.php';		
+		}
 		
 
 	}

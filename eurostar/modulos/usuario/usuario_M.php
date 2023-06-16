@@ -8,12 +8,13 @@
 			try{
 				$user = $data['username'];
 				$password = $data['password'];
-				$result = RunQuery("SELECT DISTINCT p.id_persona,p.nombre,p.primer_apellido,p.segundo_apellido,p.rfc,p.curp,p.fk_id_tipopersona,
+				$result = RunQuery("SELECT DISTINCT p.id_persona,p.nombre,p.primer_apellido,p.segundo_apellido,p.rfc,p.curp,p.fk_id_tipopersona,p.image_name,
 				(SELECT GROUP_CONCAT(t.tipo_telefono,'|',t.codigo_pais,'|',t.lada,'|',t.numero_telefono,'|' SEPARATOR ',') As telefonos FROM `es_telefonos` t where t.fk_id_persona =p.id_persona)AS telefonos,
 				(SELECT GROUP_CONCAT( c.tipo_correo_contacto ,'|', c.correo,'|' SEPARATOR ',') FROM es_correos c where p.id_persona = c.fk_id_persona) AS correos,
 				(SELECT GROUP_CONCAT( d.id_direccion,'|',d.calle,'|',d.numero,'|',d.colonia,'|',d.entre_calles,'|',d.municipio,'|',d.estado,'|',d.pais,'|',d.codigo_postal,'|',d.numero_int,'|' SEPARATOR ',') FROM es_direcciones d where d.fk_id_persona = p.id_persona) AS direcciones
 				FROM es_personas p
 				WHERE p.nombre = '$user' AND password = SHA1('$password')");
+				
 				
 				if (empty($result)){ return false; }else{
 

@@ -21,8 +21,9 @@ class Clientes_C
 
     public function administrar()
     {
-        $clientes=$this->_objModelo->readClientesM();
-        $this->_objVista->home($clientes->fetchAll(PDO::FETCH_ASSOC));
+        $clientes=$this->_objModelo->readClientesOnly();
+        $empresas=$this->_objModelo->readEmpresas();
+        $this->_objVista->home($clientes->fetchAll(PDO::FETCH_ASSOC), $empresas->fetchAll(PDO::FETCH_ASSOC));
     }
 
     public function perfil()
@@ -35,12 +36,19 @@ class Clientes_C
     public function editar()
     {
         $clientes = $this->_objModelo->readClientesM();
-        $this->_objVista->editar($clientes->fetchAll(PDO::FETCH_ASSOC));
+        $clientesSinEmp=$this->_objModelo->readClientesSinEmpM();
+        $empresas=$this->_objModelo->readEmpresas();
+        $mercados=$this->_objModelo->readMercados();
+        $tipos=$this->_objModelo->readTipos();
+        $vendedores=$this->_objModelo->readVendedores();
+        $this->_objVista->editar($clientes->fetchAll(PDO::FETCH_ASSOC), $empresas->fetchAll(PDO::FETCH_ASSOC), $vendedores->fetchAll(PDO::FETCH_ASSOC), $clientesSinEmp->fetchAll(PDO::FETCH_ASSOC), $mercados->fetchAll(PDO::FETCH_ASSOC), $tipos->fetchAll(PDO::FETCH_ASSOC));
     }
     public function agregar()
     {
         $prefijos=json_decode(file_get_contents("html/temas/eurostartemplate/assets/json/prefijos.json"), true);
-        $this->_objVista->agregar($prefijos);
+        $mercados=$this->_objModelo->readMercados();
+        $vendedores=$this->_objModelo->readVendedores();
+        $this->_objVista->agregar($prefijos, $mercados->fetchAll(PDO::FETCH_ASSOC), $vendedores->fetchAll(PDO::FETCH_ASSOC));
     }
 
     public function consultar()
@@ -72,6 +80,33 @@ class Clientes_C
             header('Location:?modulo=clientes&accion=agregar&sc');
         } else {
             header('Location:?modulo=clientes&accion=agregar&fail');
+        }
+    }
+    public function editarcliente()
+    {
+        $res = $this->_objModelo->updateClienteM($this->_datos);
+        if ($res) {
+            header('Location:?modulo=clientes&accion=editar&sc');
+        } else {
+            header('Location:?modulo=clientes&accion=editar&fail');
+        }
+    }
+
+    public function getmercados(){
+        $res=$this->_objModelo->getMercadosM($this->_datos);
+        if($res){
+            echo json_encode($res->fetchAll(PDO::FETCH_ASSOC));
+        }else{
+            echo 'error';
+        }
+    }
+
+    public function deleteclientebd(){
+        $res=$this ->_objModelo->deletebD($this->_datos);
+        if ($res) {
+            header('Location:?modulo=clientes&accion=editar&sc');
+        } else {
+            header('Location:?modulo=clientes&accion=editar&fail');
         }
     }
 

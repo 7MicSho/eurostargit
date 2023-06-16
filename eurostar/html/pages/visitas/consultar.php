@@ -131,10 +131,22 @@
                                 </td>
                                 <td data-label="empresa: " class="text-center font-w600" style="font-size:small;">
                                     <?php
-                                    if ($visitas[$i]['nombre_emp'] != '') {
-                                        echo $visitas[$i]['nombre_emp'];
-                                    } else {
-                                        echo 'Sin empresa';
+                                    for ($j=0; $j < count($empresas) ; $j++) { 
+                                        if($visitas[$i]['fk_id_empresa']==$empresas[$j]['id_empresa']){
+                                            echo $empresas[$j]['nombre_emp'];
+                                            $idEmpresa=$empresas[$j]['id_empresa'];
+                                            $nombreEmpresa=$empresas[$j]['nombre_emp'];
+                                            $razonSocial=$empresas[$j]['razon_social'];
+                                            $rFC=$empresas[$j]['rfc_emp'];
+                                            $j=count($empresas);
+                                        }else{
+                                            echo 'Sin Empresa';
+                                            $idEmpresa='Sin Empresa';
+                                            $nombreEmpresa='Sin Empresa';
+                                            $razonSocial='Sin Empresa';
+                                            $rFC='Sin Empresa';
+                                            $j=count($empresas);
+                                        }
                                     }
 
                                     ?>
@@ -176,10 +188,10 @@
                                     '<?php echo $visitas[$i]['estado'] ?>',
                                     '<?php echo $visitas[$i]['pais'] ?>',
                                     '<?php echo $visitas[$i]['codigo_postal'] ?>',
-                                    '<?php echo $visitas[$i]['id_empresa'] ?>',
-                                    '<?php echo $visitas[$i]['nombre_emp'] ?>',
-                                    '<?php echo $visitas[$i]['razon_social'] ?>',
-                                    '<?php echo $visitas[$i]['rfc_emp'] ?>',
+                                    '<?php echo $idEmpresa ?>',
+                                    '<?php echo $nombreEmpresa ?>',
+                                    '<?php echo $razonSocial?>',
+                                    '<?php echo $rFC ?>',
                                     '<?php echo $visitas[$i]['id_visitas'] ?>',
                                     '<?php echo $visitas[$i]['no_visita'] ?>',
                                     '<?php echo $visitas[$i]['fecha_visita'] ?>',
@@ -383,7 +395,6 @@
         'language': 'es'
         // Supported language: en, es, de..
     });
-
     $("#calendarvisit").evoCalendar('addCalendarEvent', [
         <?php for ($i = 0; $i < count($visitas); $i++) {
             $arrayEmpleado = explode('|', $visitas[$i]['empleado']);
@@ -418,6 +429,6 @@
                     type: "event"
                 },
             <?php } ?>
-        <?php } ?>
+        <?php }?>
     ]);
 </script>

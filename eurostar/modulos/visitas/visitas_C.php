@@ -24,12 +24,13 @@ class Visitas_C
     {
         //$id=$datos;
         //$info=$this->_objModelo->readvisit($id);
-        $prospecto = $this->_objModeloPros->readOneProspectoVendedorM($this->_datos);
+        $prospecto = $this->_objModeloPros->readOneProspectoVendedorM($this->_datos); // lee en general clientes o prospectos
         $cliente = $this->_objModeloCli->readOneClienteM($this->_datos);
         $telPros = $this->_objModeloPros->readTelEmp($this->_datos);
         $visitPros = $this->_objModelo->readVisitToPros($this->_datos);
         $productos = $this->_objModelo->readProductos();
-        $this->_objVista->agregar($prospecto->fetchAll(PDO::FETCH_ASSOC), $telPros->fetchAll(PDO::FETCH_ASSOC), $visitPros->fetchAll(PDO::FETCH_ASSOC), $productos->fetchAll(PDO::FETCH_ASSOC), $cliente->fetchAll(PDO::FETCH_ASSOC));
+        $prospecto2=$this->_objModelo->readProspectoCliente($this->_datos);
+        $this->_objVista->agregar($prospecto2->fetchAll(PDO::FETCH_ASSOC), $telPros->fetchAll(PDO::FETCH_ASSOC), $visitPros->fetchAll(PDO::FETCH_ASSOC), $productos->fetchAll(PDO::FETCH_ASSOC), $cliente->fetchAll(PDO::FETCH_ASSOC));
     }
     public function agregarVisitaCliente()
     {
@@ -44,16 +45,18 @@ class Visitas_C
 
     public function consultar()
     {
-        $visitas = $this->_objModelo->readAllVisit();
+        $visitas = $this->_objModelo->readVisitSinEmp();
+        $empresas =$this->_objModelo->readEmpresas();
         //$visitasCli=$this->_objModelo->readAllVisitCli();
         //$vendedores=$this->_objModelo->readVendedor();
-        $this->_objVista->consultar($visitas->fetchAll(PDO::FETCH_ASSOC));
+        $this->_objVista->consultar($visitas->fetchAll(PDO::FETCH_ASSOC), $empresas->fetchAll(PDO::FETCH_ASSOC));
     }
 
     public function muestras()
     {
         $muestras = $this->_objModelo->readMuestras();
-        $this->_objVista->muestras($muestras->fetchAll(PDO::FETCH_ASSOC));
+        $empresas = $this->_objModelo->readEmpresas();
+        $this->_objVista->muestras($muestras->fetchAll(PDO::FETCH_ASSOC), $empresas->fetchAll(PDO::FETCH_ASSOC));
     }
     public function createVisit()
     {
@@ -69,7 +72,9 @@ class Visitas_C
     {
         $prospectos = $this->_objModeloPros->readProspectosM();
         $prosSinEmp = $this->_objModeloPros->readProspectosNoEmpresaM();
-        $this->_objVista->listapersonas($prospectos->fetchAll(PDO::FETCH_ASSOC), $prosSinEmp->fetchAll(PDO::FETCH_ASSOC));
+        $clientes = $this->_objModeloCli->readClientesM();
+        $clientesSinEmp=$this->_objModeloCli->readClientesNoEmpresaM();
+        $this->_objVista->listapersonas($prospectos->fetchAll(PDO::FETCH_ASSOC), $prosSinEmp->fetchAll(PDO::FETCH_ASSOC), $clientes->fetchAll(PDO::FETCH_ASSOC), $clientesSinEmp->fetchAll(PDO::FETCH_ASSOC));
     }
 
     public function carrito()
@@ -108,10 +113,6 @@ class Visitas_C
 
 
         $this->_objVista->carrito($prospecto, $productos);
-    }
-    public function delcarrito()
-    {
-
     }
 }
 ?>

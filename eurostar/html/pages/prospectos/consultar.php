@@ -8,6 +8,7 @@
             <table id="table" class="table dataTable table-striped table-bordered" style="width:100%">
                 <thead>
                     <tr>
+                        <th>#</th>
                         <th>Nombre</th>
                         <th>Apellidos</th>
                         <th>Teléfono</th>
@@ -19,10 +20,14 @@
                 </thead>
                 <tbody>
                     <?php
+                    $count=1;
                     for ($i = 0; $i < count($prospectos); $i++) {
                         if ($_SESSION['typeuser'] == 'empleado' && $_SESSION['id_empleado'] == $prospectos[$i]['id_empleado']) {
                             ?>
                             <tr>
+                                <td data-label="id: " class="text-center font-w600" style="font-size:small;">
+                                    <?php echo $count++; ?>
+                                </td>
                                 <td data-label="nombre: " class="text-center font-w600" style="font-size:small;">
                                     <?php echo $prospectos[$i]['nombre']; ?>
                                 </td>
@@ -71,6 +76,9 @@
                             <?php
                         } elseif ($_SESSION['typeuser'] == 'admin') { ?>
                             <tr>
+                                <td data-label="id: " class="text-center font-w600" style="font-size:small;">
+                                    <?php echo $count++; ?>
+                                </td>
                                 <td data-label="nombre: " class="text-center font-w600" style="font-size:small;">
                                     <?php echo $prospectos[$i]['nombre']; ?>
                                 </td>
@@ -109,6 +117,114 @@
                                             value="<?php echo $prospectos[$i]['id_direccion'] ?>">
                                         <input type="hidden" name="id_empresa"
                                             value="<?php echo $prospectos[$i]['id_empresa'] ?>">
+                                        <button type="submit" class="btn rounded-pill">
+                                            <span class="fa-solid fa-magnifying-glass"></span> Ver más
+                                        </button>
+                                    </form>
+                                </td>
+
+                            </tr>
+                            <?php
+                        }
+                    }
+                    ?>
+                    <?php
+                    for ($i = 0; $i < count($prosSinEmp); $i++) {
+                        if ($_SESSION['typeuser'] == 'empleado' && $_SESSION['id_empleado'] == $prosSinEmp[$i]['id_empleado']) {
+                            ?>
+                            <tr>
+                                <td data-label="id: " class="text-center font-w600" style="font-size:small;">
+                                    <?php echo $count++; ?>
+                                </td>
+                                <td data-label="nombre: " class="text-center font-w600" style="font-size:small;">
+                                    <?php echo $prosSinEmp[$i]['nombre']; ?>
+                                </td>
+                                <td data-label="nombre: " class="text-center font-w600" style="font-size:small;">
+                                    <?php echo $prosSinEmp[$i]['primer_apellido'] . ' ' . $prosSinEmp[$i]['segundo_apellido']; ?>
+                                </td>
+                                <td data-label="nombre: " class="text-center font-w600" style="font-size:small;">
+                                    <?php echo '+' . $prosSinEmp[$i]['codigo_pais'] . ' ' . $prosSinEmp[$i]['lada'] . $prosSinEmp[$i]['numero_telefono']; ?>
+                                </td>
+                                <td data-label="nombre: " class="text-center font-w600" style="font-size:small;">
+                                    <?php echo $prosSinEmp[$i]['correo']; ?>
+                                </td>
+                                <td data-label="nombre: " class="text-center font-w600" style="font-size:small;">
+                                    <?php echo $prosSinEmp[$i]['calle'] . ' ' . $prosSinEmp[$i]['numero'] . ' ' . $prosSinEmp[$i]['numero_int'] . ' ' . $prosSinEmp[$i]['colonia']; ?>
+                                </td>
+                                <td data-label="nombre: " class="text-center font-w600" style="font-size:small;">
+                                    <?php
+                                    if ($prosSinEmp[$i]['nombre_emp'] != '') {
+                                        echo $prosSinEmp[$i]['nombre_emp'];
+                                    } else {
+                                        echo 'Sin Empresa';
+                                    }
+                                    ?>
+                                </td>
+                                <td data-label="nombre: " class="text-center font-w600" style="font-size:small;">
+                                    <form method="post" action="?modulo=prospectos&accion=prospecto">
+                                        <input type="hidden" name="id_persona"
+                                            value="<?php echo $prosSinEmp[$i]['id_persona'] ?>">
+                                        <input type="hidden" name="id_prospecto"
+                                            value="<?php echo $prosSinEmp[$i]['id_prospecto'] ?>">
+                                        <input type="hidden" name="id_correo"
+                                            value="<?php echo $prosSinEmp[$i]['id_correo'] ?>">
+                                        <input type="hidden" name="id_telefono"
+                                            value="<?php echo $prosSinEmp[$i]['id_telefono'] ?>">
+                                        <input type="hidden" name="id_direccion"
+                                            value="<?php echo $prosSinEmp[$i]['id_direccion'] ?>">
+                                        <input type="hidden" name="id_empresa"
+                                            value="<?php echo $prosSinEmp[$i]['id_empresa'] ?>">
+                                        <button type="submit" class="btn rounded-pill">
+                                            <span class="fa-solid fa-magnifying-glass"></span> Ver más
+                                        </button>
+                                    </form>
+                                </td>
+
+                            </tr>
+                            <?php
+                        } elseif ($_SESSION['typeuser'] == 'admin') { ?>
+                            <tr>
+                                <td data-label="id: " class="text-center font-w600" style="font-size:small;">
+                                    <?php echo $count++; ?>
+                                </td>
+                                <td data-label="nombre: " class="text-center font-w600" style="font-size:small;">
+                                    <?php echo $prosSinEmp[$i]['nombre']; ?>
+                                </td>
+                                <td data-label="nombre: " class="text-center font-w600" style="font-size:small;">
+                                    <?php echo $prosSinEmp[$i]['primer_apellido'] . ' ' . $prosSinEmp[$i]['segundo_apellido']; ?>
+                                </td>
+                                <td data-label="nombre: " class="text-center font-w600" style="font-size:small;">
+                                    <?php echo '+' . $prosSinEmp[$i]['codigo_pais'] . ' ' . $prosSinEmp[$i]['lada'] . $prosSinEmp[$i]['numero_telefono']; ?>
+                                </td>
+                                <td data-label="nombre: " class="text-center font-w600" style="font-size:small;">
+                                    <?php echo $prosSinEmp[$i]['correo']; ?>
+                                </td>
+                                <td data-label="nombre: " class="text-center font-w600" style="font-size:small;">
+                                    <?php echo $prosSinEmp[$i]['calle'] . ' ' . $prosSinEmp[$i]['numero'] . ' ' . $prosSinEmp[$i]['numero_int'] . ' ' . $prosSinEmp[$i]['colonia']; ?>
+                                </td>
+                                <td data-label="nombre: " class="text-center font-w600" style="font-size:small;">
+                                    <?php
+                                    if ($prosSinEmp[$i]['nombre_emp'] != '') {
+                                        echo $prosSinEmp[$i]['nombre_emp'];
+                                    } else {
+                                        echo 'Sin Empresa';
+                                    }
+                                    ?>
+                                </td>
+                                <td data-label="nombre: " class="text-center font-w600" style="font-size:small;">
+                                    <form method="post" action="?modulo=prospectos&accion=prospecto">
+                                        <input type="hidden" name="id_persona"
+                                            value="<?php echo $prosSinEmp[$i]['id_persona'] ?>">
+                                        <input type="hidden" name="id_prospecto"
+                                            value="<?php echo $prosSinEmp[$i]['id_prospecto'] ?>">
+                                        <input type="hidden" name="id_correo"
+                                            value="<?php echo $prosSinEmp[$i]['id_correo'] ?>">
+                                        <input type="hidden" name="id_telefono"
+                                            value="<?php echo $prosSinEmp[$i]['id_telefono'] ?>">
+                                        <input type="hidden" name="id_direccion"
+                                            value="<?php echo $prosSinEmp[$i]['id_direccion'] ?>">
+                                        <input type="hidden" name="id_empresa"
+                                            value="<?php echo $prosSinEmp[$i]['id_empresa'] ?>">
                                         <button type="submit" class="btn rounded-pill">
                                             <span class="fa-solid fa-magnifying-glass"></span> Ver más
                                         </button>

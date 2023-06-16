@@ -9,7 +9,7 @@
 			$this->_scripts = ZONAS.'scripts.php';
 
 		}
-		public function home()
+		public function home($emplyeds,$c_pros,$c_clie,$c_prod,$c_empl,$c_prov,$c_vent,$c_prosm,$c_cliem,$c_prodm,$c_emplm,$c_provm,$c_ventm,$ventas,$dventas, $mercado, $mercadop, $total )
 		{
 			//$this->_validate();
 			$this->_contenido = 'html/pages/admin/inicio.php';

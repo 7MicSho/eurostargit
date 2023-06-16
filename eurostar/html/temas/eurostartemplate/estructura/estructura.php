@@ -10,7 +10,7 @@
 
     <?php
 
-    if (isset($_GET['modulo']) && ($_GET['modulo'] != 'usuario' OR $_GET['accion'] == 'profile') && $_GET['accion'] != 'login') {
+    if (isset($_GET['modulo']) && ($_GET['modulo'] != 'usuario' OR $_GET['accion'] == 'aprendizaje' OR   $_GET['accion'] == 'profile') && $_GET['accion'] != 'login') {
         ?>
         <div class="layout-wrapper layout-content-navbar">
             <div class="layout-container">

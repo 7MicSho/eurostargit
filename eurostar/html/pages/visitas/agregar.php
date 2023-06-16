@@ -18,7 +18,7 @@
                                         </span>
                                         <span class="app-brand-text demo text-body fw-bolder"
                                             style="text-transform: uppercase">
-                                            <?php if ($prospecto[0]['nombre_emp'] == 'N/A') {
+                                            <?php if(!isset($prospecto['nombre_emp'])) {
                                                 echo ($prospecto[0]['nombre'] . ' ' . $prospecto[0]['primer_apellido']);
                                             } else {
                                                 echo $prospecto[0]['nombre_emp'];
@@ -181,6 +181,7 @@
                                             </label>
                                         </div>
                                     <?php } ?>
+                                    <hr>
                                     <div class="form-check mt-1">
                                         <input class="form-check-input" type="checkbox"
                                             value="DESARROLLO" id="checkdesarrollo" onclick="enable(this);"
@@ -266,6 +267,8 @@
                             ?>">
                             <input type="hidden" id="id_vendedor" name="id_vendedor" value="<?php echo $prospecto[0]['fk_id_vendedor'];
                             ?>">
+                            <input type="hidden" id="id_empresa" name="id_empresa" value="<?php echo $prospecto[0]['id_empresa'];
+                            ?>">
                             
 
                             <button class="btn btn-primary d-grid w-100 mb-3" data-bs-toggle="offcanvas" type="button"
@@ -324,6 +327,7 @@
         let especificaciones = document.getElementById('especificaciones').value;
         let id_prospecto = document.getElementById('id_prospecto').value;
         let id_vendedor = document.getElementById('id_vendedor').value;
+        let id_empresa = document.getElementById('id_empresa').value;
 
         //muestra info
         let muestra = document.getElementById('muestra').value;
@@ -331,6 +335,8 @@
         let fechacom = document.getElementById('fechaComp').value;
         let descripcion = document.getElementById('especificacion').value;
         //convert array to string
+
+        /* console.log(fecha+','+hora+','+noVisita+','+especificaciones+','+id_prospecto+','+id_vendedor+','+id_empresa+','+muestra+','+nombremuest+','+fechacom+','+descripcion); */
 
 
 
@@ -356,9 +362,21 @@
             })
 
         } else {
-            let url = 'http://192.168.21.63/eurostar/?modulo=visitas&accion=createVisit&fecha=' + fecha + '&hora=' + hora + '&noVisita=' + noVisita +'&id_vendedor='+id_vendedor+
-                '&promo=' + arrayPromo + '&producto=' + arrayProd + '&especificaciones=' + especificaciones + '&id_prospecto=' + id_prospecto + '&muestra=' + muestra + '&muestraName=' + nombremuest + '&fechaComp=' + fechacom + '&especificacion=' + descripcion;
+            let url = 'http://192.168.0.14/eurostargit/eurostar/?modulo=visitas&accion=createVisit';
             const formData = new FormData();
+            formData.append('fecha', fecha);
+            formData.append('hora', hora);
+            formData.append('noVisita',noVisita);
+            formData.append('id_vendedor', id_vendedor);
+            formData.append('id_empresa', id_empresa);
+            formData.append('promo', arrayPromo);
+            formData.append('producto', arrayProd);
+            formData.append('especificaciones', especificaciones);
+            formData.append('id_prospecto', id_prospecto);
+            formData.append('muestra', muestra);
+            formData.append('muestraName', nombremuest);
+            formData.append('fechaComp', fechacom);
+            formData.append('especificacion', descripcion);
             let response = fetch(url, {
                 method: 'POST',
                 body: formData,
@@ -370,7 +388,7 @@
                     text: 'Prospecto agregado con exito',
                     footer: ''
                 })
-                setTimeout(pausa, 900);
+                /* setTimeout(pausa, 900); */
 
             } else {
                 Swal.fire({

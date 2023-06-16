@@ -20,5 +20,7 @@
 	define('ZONAS','html/temas/'.TEMA.'/template/');
 	define('ESTRUCTURA','html/temas/'.TEMA.'/estructura/');
 	define('ASSETS','html/temas/'.TEMA.'/assets');
+	define('PUBLICIMG','html/image/personas/');
 	define('TEMPLATE','html/temas/'.TEMA.'/template/');
+	define('PERSONAS', 'html/image/personas/prospectos')
 ?>

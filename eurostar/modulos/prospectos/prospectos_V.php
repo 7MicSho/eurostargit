@@ -10,14 +10,14 @@
 
 		}
 
-		public function home($visitas, $chartInfo, $prospectosOnly, $chartInfoMonth)
+		public function home($visitas, $chartInfo, $prospectosOnly, $chartInfoMonth, $empresas)
 		{
 			//$this->_validate();
 			$this->_contenido = 'html/pages/prospectos/prospectos.php';
 			require_once ESTRUCTURA.'estructura.php';		
 		}
 
-        public function agregar($prefijos, $empleados)
+        public function agregar($prefijos, $empleados, $mercados)
 		{
 			$this->_contenido = 'html/pages/prospectos/agregar.php';
 			require_once ESTRUCTURA.'estructura.php';		
@@ -35,7 +35,7 @@
 			require_once ESTRUCTURA.'estructura.php';		
 		}
 
-        public function editar($prospectos, $vendedores)
+        public function editar($prospectos, $vendedores, $prosSinEmp, $mercados, $tipos)
 		{
 			$this->_contenido = 'html/pages/prospectos/editar.php';
 			require_once ESTRUCTURA.'estructura.php';		

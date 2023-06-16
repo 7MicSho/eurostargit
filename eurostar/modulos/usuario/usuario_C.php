@@ -39,7 +39,7 @@
 		public function entrar(){
 
 			$user = $this->_objModelo->ModelgetLogin($this->_datos);
-		
+			
 			if (isset($user['fk_id_tipopersona'])) {
 
 				$this->_objSesion->crearVariable('nombre',$user['nombre']);
@@ -90,10 +90,16 @@
 			
 			$this->_objVista->profile(); 
 		}
+
         public function profileupdate(){
 			
 			$this->_objModelo->profileupdate($this->_datos);
 			header('Location:?modulo=usuario&accion=profile&ok');
+		}
+
+		public function aprendizaje(){
+			
+			$this->_objVista->aprendizaje(); 
 		}
 
 	}

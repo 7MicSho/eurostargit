@@ -48,12 +48,47 @@
 
 			$this->_objVista->paris1000(); 
 		}
-		
-		
-		
-		
-		
 
+		public function dashproductos(){
+
+			$tipoproductosPDO = $this->_objModelo->gettipoproducto();
+			$tipocompuestoPDO = $this->_objModelo->gettipocompuesto();
+			$productosPDO = $this->_objModelo->listaproductos();
+
+			$tipoproductos = $tipoproductosPDO->fetchAll(PDO::FETCH_ASSOC);
+			$tipocompuesto = $tipocompuestoPDO->fetchAll(PDO::FETCH_ASSOC);
+			$productos = $productosPDO->fetchAll(PDO::FETCH_ASSOC);
+
+			$this->_objVista->dashproductos($productos,$tipoproductos,$tipocompuesto); 
+		}
+
+		public function agregarproducto(){
+
+			$tipoproductosPDO = $this->_objModelo->gettipoproducto();
+			$tipocompuestoPDO = $this->_objModelo->gettipocompuesto();
+			$tipoproductos = $tipoproductosPDO->fetchAll(PDO::FETCH_ASSOC);
+			$tipocompuesto = $tipocompuestoPDO->fetchAll(PDO::FETCH_ASSOC);
+			$this->_objVista->agregarproducto($tipoproductos,$tipocompuesto); 
+		}
+
+		public function productoadd(){
+
+			$data = $this->_objModelo->productoadd($this->_datos);
+			header('Location:?modulo=producto&accion=agregarproducto&res=true');
+		}
+
+		public function eliminarproducto(){
+
+			$data = $this->_objModelo->eliminarproducto($this->_datos);
+			header('Location:?modulo=producto&accion=dashproductos&res=eliminado');
+		}
+
+		public function editarproducto(){
+
+			$data = $this->_objModelo->editarproducto($this->_datos);
+			header('Location:?modulo=producto&accion=dashproductos&res=editado');
+		}
+		
         
 	}
 

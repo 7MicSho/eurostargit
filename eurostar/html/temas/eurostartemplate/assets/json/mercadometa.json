@@ -1,0 +1,188 @@
+[
+    {
+        "id":"1",
+        "id_mercado":"1",
+        "mercado":"CONSTRUCCION",
+        "Giro":"CORPORATIVOS Y GRANDES TORRES"
+    },
+    {
+        "id":"2",
+        "id_mercado":"1",
+        "mercado":"CONSTRUCCION",
+        "Giro":"INTERES SOCIAL (INFONAVIT)"
+    },
+    {
+        "id":"3",
+        "id_mercado":"1",
+        "mercado":"CONSTRUCCION",
+        "Giro":"VIVIENDA (MEDIA Y RESIDENCIAL)"
+    },
+    {
+        "id":"4",
+        "id_mercado":"1",
+        "mercado":"CONSTRUCCION",
+        "Giro":"URBANIZACION (SECTOR PRIVADO Y GOBIERNO)"
+    },
+    {
+        "id":"5",
+        "id_mercado":"1",
+        "mercado":"CONSTRUCCION",
+        "Giro":"CARRETERAS (SECTOR PRIVADO Y GOBIERNO)"
+    },
+    {
+        "id":"6",
+        "id_mercado":"1",
+        "mercado":"CONSTRUCCION",
+        "Giro":"NUEVOS PARQUES INDUSTRIALES"
+    },
+    {
+        "id":"7",
+        "id_mercado":"2",
+        "mercado":"COMERCIO Y SERVICIOS",
+        "Giro":"AEROPUERTOS"
+    },
+    {
+        "id":"8",
+        "id_mercado":"2",
+        "mercado":"COMERCIO Y SERVICIOS",
+        "Giro":"CENTROS COMERCIALES"
+    },
+    {
+        "id":"9",
+        "id_mercado":"2",
+        "mercado":"COMERCIO Y SERVICIOS",
+        "Giro":"ESCUELAS"
+    },
+    {
+        "id":"10",
+        "id_mercado":"2",
+        "mercado":"COMERCIO Y SERVICIOS",
+        "Giro":"HOSPITALES"
+    },
+    {
+        "id":"11",
+        "id_mercado":"2",
+        "mercado":"COMERCIO Y SERVICIOS",
+        "Giro":"HOTELES"
+    },
+    {
+        "id":"12",
+        "id_mercado":"2",
+        "mercado":"COMERCIO Y SERVICIOS",
+        "Giro":"SUPERMERCADOS"
+    },
+    {
+        "id":"13",
+        "id_mercado":"2",
+        "mercado":"COMERCIO Y SERVICIOS",
+        "Giro":"DEPORTIVOS"
+    },
+    {
+        "id":"14",
+        "id_mercado":"2",
+        "mercado":"COMERCIO Y SERVICIOS",
+        "Giro":"FERRETERIAS"
+    },
+    {
+        "id":"15",
+        "id_mercado":"3",
+        "mercado":"INFRAESTRUCTURA BASICA",
+        "Giro":"TERMINALES DE ALMACENAMIENTO"
+    },
+    {
+        "id":"16",
+        "id_mercado":"3",
+        "mercado":"INFRAESTRUCTURA BASICA",
+        "Giro":"COMUNICACIONES Y TRANSPORTE"
+    },
+    {
+        "id":"17",
+        "id_mercado":"3",
+        "mercado":"INFRAESTRUCTURA BASICA",
+        "Giro":"FERROVIARIO"
+    },
+    {
+        "id":"18",
+        "id_mercado":"3",
+        "mercado":"INFRAESTRUCTURA BASICA",
+        "Giro":"MARINO"
+    },
+    {
+        "id":"19",
+        "id_mercado":"3",
+        "mercado":"INFRAESTRUCTURA BASICA",
+        "Giro":"PETROLERO"
+    },
+    {
+        "id":"20",
+        "id_mercado":"3",
+        "mercado":"INFRAESTRUCTURA BASICA",
+        "Giro":"GENERACION DE ENERGIA"
+    },
+    {
+        "id":"21",
+        "id_mercado":"3",
+        "mercado":"INFRAESTRUCTURA BASICA",
+        "Giro":"AUTOMOTRIZ"
+    },
+    {
+        "id":"22",
+        "id_mercado":"4",
+        "mercado":"METALMECANICA",
+        "Giro":"INFRAESTRUCTURA"
+    },
+    {
+        "id":"23",
+        "id_mercado":"4",
+        "mercado":"METALMECANICA",
+        "Giro":"FABRICANTES DE HERRERIA"
+    },
+    {
+        "id":"24",
+        "id_mercado":"4",
+        "mercado":"METALMECANICA",
+        "Giro":"TANQUES"
+    },
+    {
+        "id":"25",
+        "id_mercado":"4",
+        "mercado":"METALMECANICA",
+        "Giro":"MEBLES"
+    },
+    {
+        "id":"26",
+        "id_mercado":"5",
+        "mercado":"INDUSTRIA",
+        "Giro":"QUIMICA"
+    },
+    {
+        "id":"26",
+        "id_mercado":"5",
+        "mercado":"INDUSTRIA",
+        "Giro":"ALIMENTOS Y BEBIDAS"
+    },
+    {
+        "id":"27",
+        "id_mercado":"6",
+        "mercado":"OTROS",
+        "Giro":"CONTRATISTAS"
+    },
+    {
+        "id":"28",
+        "id_mercado":"6",
+        "mercado":"OTROS",
+        "Giro":"PINTORES"
+    },
+    {
+        "id":"29",
+        "id_mercado":"6",
+        "mercado":"OTROS",
+        "Giro":"TABLAROQUEROS"
+    },
+    {
+        "id":"30",
+        "id_mercado":"6",
+        "mercado":"OTROS",
+        "Giro":"MANTENIMIENTOS"
+    }
+]

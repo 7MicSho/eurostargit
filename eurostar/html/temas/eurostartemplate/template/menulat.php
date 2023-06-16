@@ -34,8 +34,8 @@
             <div class="sidebar-mini-hidden-b text-center">
                 <img class="h-auto rounded-circle"
                     style="background: rgb(229,238,205); object-fit: contain; object-position: top 75%; max-height:100px;margin-bottom: 1em"
-                    src="<?php echo ASSETS ?>/img/avatars/<?php echo $foto = (isset($_SESSION['typeuser']) && $_SESSION['typeuser'] == 'admin') ? 'norberto.jpg' : 'vendedor.jpg'; ?>"
-                    alt class="w-px-40 h-auto rounded-circle" alt="">
+                    src="<?php if($_SESSION['foto'] != '' || !file_exists(PUBLICIMG.$_SESSION['foto']) ) {  echo PUBLICIMG.$_SESSION['foto']; }else{ echo PUBLICIMG.'avatar.jpg';} ?>"
+                     class="w-px-40 h-auto rounded-circle" alt="">
                 <ul class="list-inline mt-10">
                     <li class="list-inline-item">
                         <a class="sidebar-mini-hide link-effect text-secondary font-size-xs font-w600 text-uppercase"
@@ -138,12 +138,12 @@
             <ul class="menu-sub">
                 <li class="menu-item">
                     <a href="?modulo=producto&accion=galeria" class="menu-link">
-                        <div data-i18n="Perfect Scrollbar">Galeria</div>
+                        <div data-i18n="Perfect Scrollbar">GALERIA</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="extended-ui-text-divider.html" class="menu-link">
-                        <div data-i18n="Text Divider">Editar/Actualizar</div>
+                    <a href="?modulo=producto&accion=dashproductos" class="menu-link">
+                        <div data-i18n="Text Divider">EDITAR / ACTUALIZAR</div>
                     </a>
                 </li>
             </ul>
@@ -151,7 +151,7 @@
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-money"></i>
-                <div data-i18n="Authentications">COMPRAVENTAS</div>
+                <div data-i18n="Authentications">COMPRA / VENTAS</div>
             </a>
             <ul class="menu-sub">
                 <li class="menu-item">
@@ -391,17 +391,17 @@
             <ul class="menu-sub">
                 <li class="menu-item">
                     <a href="?modulo=visitas&accion=consultar" class="menu-link">
-                        <div data-i18n="Alerts">Administrar</div>
+                        <div data-i18n="Alerts">ADMINISTRAR</div>
                     </a>
                 </li>
                 <li class="menu-item">
                     <a href="?modulo=visitas&accion=muestras" class="menu-link">
-                        <div data-i18n="Alerts">Muestras</div>
+                        <div data-i18n="Alerts">MUESTRAS</div>
                     </a>
                 </li>
                 <li class="menu-item">
                     <a href="?modulo=prospectos&accion=promociones" class="menu-link">
-                        <div data-i18n="Buttons">Promociones</div>
+                        <div data-i18n="Buttons">PROMOCIONES</div>
                     </a>
                 </li>
             </ul>
@@ -425,27 +425,27 @@
         <li class="menu-item">
             <a href="javascript:void(0)" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-box"></i>
-                <div data-i18n="User interface">Prospectos</div>
+                <div data-i18n="User interface">PROSPECTOS</div>
             </a>
             <ul class="menu-sub">
                 <li class="menu-item">
                     <a href="ui-accordion.html" class="menu-link">
-                        <div data-i18n="Accordion">Ventas</div>
+                        <div data-i18n="Accordion">VENTAS</div>
                     </a>
                 </li>
                 <li class="menu-item">
                     <a href="ui-alerts.html" class="menu-link">
-                        <div data-i18n="Alerts">Visitas</div>
+                        <div data-i18n="Alerts">VISITAS</div>
                     </a>
                 </li>
                 <li class="menu-item">
                     <a href="ui-badges.html" class="menu-link">
-                        <div data-i18n="Badges">Clientes</div>
+                        <div data-i18n="Badges">CLIENTES</div>
                     </a>
                 </li>
                 <li class="menu-item">
                     <a href="ui-buttons.html" class="menu-link">
-                        <div data-i18n="Buttons">Promociones</div>
+                        <div data-i18n="Buttons">PROMOCIONES</div>
                     </a>
                 </li>
             </ul>
@@ -468,7 +468,7 @@
         <li class="menu-item">
             <a href="?modulo=usuario&accion=login" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-collection"></i>
-                <div data-i18n="Basic">Iniciar Sesion</div>
+                <div data-i18n="Basic">INICIAR SESIÓN</div>
             </a>
         </li>
 

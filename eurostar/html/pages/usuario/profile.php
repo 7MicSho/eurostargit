@@ -4,12 +4,28 @@
 
         <div class="row">
             <div class="col-md-12">
-
                 <div class="card mb-4">
-                    <h5 class="card-header">Detalles del perfil</h5>
-
-                    <hr class="my-0">
                     <div class="card-body">
+
+                        <div style="margin-top: 3em;margin-bottom: 3em">
+                            <div class="sidebar-mini-hidden-b text-center">
+                                <img class="h-auto rounded-circle"
+                                    style="background: rgb(229,238,205); object-fit: contain; object-position: top 75%; max-height:250px;margin-bottom: 1em"
+                                    src="html/temas/eurostartemplate/assets/img/avatars/norberto.jpg" alt="">
+                                <ul class="list-inline mt-10">
+                                    <li class="list-inline-item">
+                                        <a class="sidebar-mini-hide link-effect text-primary font-size-xs font-w600 text-uppercase"
+                                            href="?view=profile"><?php echo $_SESSION['nombre']." ".$_SESSION['primer_apellido']; ?></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="divider divider-primary">
+                            <div class="divider-text">
+                                <h5>Detalles del perfil</h5>
+                            </div>
+                        </div>
                         <form id="formAccountSettings" method="POST" action="?modulo=usuario&accion=profileupdate">
 
                             <input type="hidden" name="idPersona" value="<?php echo $_SESSION['id_persona']; ?>">
@@ -31,7 +47,8 @@
                                         <label class="form-label" for="basic-icon-default-fullname">Primer apellido
                                             <strong class="text-danger">*</strong></label>
                                         <div class="input-group input-group-merge">
-                                            <span id="basic-icon-default-fullname2" class="input-group-text"></span>
+                                            <span id="basic-icon-default-fullname2" class="input-group-text"><i
+                                                    class="bx bx-user text-danger"></i></span>
                                             <input readonly type="text" class="form-control" id="txtpapellido"
                                                 placeholder="Primer apellido" name="primer_apellido"
                                                 aria-label="Primer apellido"
@@ -43,7 +60,8 @@
                                         <label class="form-label" for="basic-icon-default-fullname">Segundo apellido
                                             <strong class="text-danger">*</strong></label>
                                         <div class="input-group input-group-merge">
-                                            <span id="basic-icon-default-fullname2" class="input-group-text"></span>
+                                            <span id="basic-icon-default-fullname2" class="input-group-text"><i
+                                                    class="bx bx-user text-danger"></i></span>
                                             <input readonly type="text" class="form-control" id="txtsapellido"
                                                 placeholder="Segundo apellido" name="segundo_apellido"
                                                 aria-label="Segundo apellido"
@@ -128,9 +146,11 @@
 
                                 </div>
 
-                                <div class="row d-flex mb-2">
-                                    <div class="col-6 col-md-3 text-center text-danger">Dirección</div>
-                                    <hr class="mt-2 mb-3 col-6 col-md-9">
+                                <div class="divider divider-primary">
+                                    <div class="divider-text">
+                                        <!-- <i class="bx bx-home" style="color: red;"></i> -->
+                                        <h5>Dirección</h5>
+                                    </div>
                                 </div>
                                 <div class="row">
                                     <div class="mb-3 col-md-6">
@@ -310,12 +330,7 @@
                                         </div>
                                     </div>
 
-
                                 </div>
-
-
-
-
 
                                 <div class="mt-2">
                                     <button type="submit" id="sendchange" class="btn btn-primary me-2" disabled>Guardar
@@ -328,7 +343,23 @@
 
                 </div>
                 <!-- /Account -->
+
+
+                <div class="divider divider-primary">
+                    <div class="divider-text">
+                        <!-- <i class="bx bx-home" style="color: red;"></i> -->
+                        <h5>Mi aprendizaje</h5>
+                    </div>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar"
+                        style="width: 40%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="mt-2 text-center">
+                    <a class="btn btn-primary me-2" href="?modulo=usuario&accion=aprendizaje">Ir</a>
+                </div>
             </div>
+
             <div class="card">
                 <h5 class="card-header">Borrar cuenta</h5>
                 <div class="card-body">

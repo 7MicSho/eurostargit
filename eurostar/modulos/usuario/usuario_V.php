@@ -18,6 +18,12 @@
 			$this->_contenido = 'html/pages/usuario/profile.php';	
 			require_once ESTRUCTURA.'estructura.php';	
 		}
+
+		public function aprendizaje()
+		{
+			$this->_contenido = 'html/pages/usuario/aprendizaje.php';	
+			require_once ESTRUCTURA.'estructura.php';	
+		}
 	}
 	
 ?>

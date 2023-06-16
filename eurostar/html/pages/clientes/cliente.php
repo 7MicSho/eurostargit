@@ -1,3 +1,4 @@
+<?php define('IMG_RUTE','html/image/personas/clientes/'); ?>
 <div class="content-wrapper">
 
     <!-- Content -->
@@ -11,7 +12,7 @@
                     <div class="card-body">
                         <div class="user-avatar-section">
                             <div class=" d-flex align-items-center flex-column">
-                                <img class="img-fluid rounded my-4" src="<?php echo $cliente[0]['ruta_foto'] ?>" height="110"
+                                <img class="img-fluid rounded my-4" src="<?php echo IMG_RUTE.$cliente[0]['image_name'] ?>" height="110"
                                     width="110" alt="User avatar">
                                 <div class="user-info text-center">
                                     <h4 class="mb-2">

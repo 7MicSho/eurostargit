@@ -17,19 +17,19 @@ class Clientes_V
         require_once ESTRUCTURA . 'estructura.php';
     }
 
-    public function home($clientes)
+    public function home($clientes, $empresas)
     {
         //$this->_validate();
         $this->_contenido = 'html/pages/clientes/clientes.php';
         require_once ESTRUCTURA . 'estructura.php';
     }
 
-    public function editar($clientes)
+    public function editar($clientes, $empresas, $vendedores, $clientesSinEmp, $mercados, $tipos)
     {
         $this->_contenido = 'html/pages/clientes/editar.php';
         require_once ESTRUCTURA.'estructura.php';		
     }
-    public function agregar($prefijos)
+    public function agregar($prefijos, $mercados, $vendedores)
     {
         $this->_contenido = 'html/pages/clientes/agregar.php';
         require_once ESTRUCTURA.'estructura.php';		
